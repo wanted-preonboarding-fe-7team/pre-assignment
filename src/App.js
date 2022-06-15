@@ -1,8 +1,11 @@
-import React from 'react';
-import PreAssignmentGuide from './pages/PreAssignmentGuide';
+import Login from './componenets/Login/Login';
 
 function App() {
-  return <PreAssignmentGuide />;
+  return (
+    <>
+      <Login />
+    </>
+  );
 }
 
 export default App;
