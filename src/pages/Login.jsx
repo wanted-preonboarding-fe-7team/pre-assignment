@@ -11,6 +11,7 @@ export default function Login() {
         autoFocus
       />
       <Input type="text" placeholder="비밀번호" />
+      <Button>로그인</Button>
     </Body>
   );
 }
@@ -32,4 +33,9 @@ const Input = styled.input`
   margin: 5px 0;
   width: 200px;
   outline: 1px solid black;
+`;
+
+const Button = styled.button`
+  color: white;
+  background-color: blue;
 `;
