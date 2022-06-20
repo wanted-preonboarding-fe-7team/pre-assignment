@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 `;
 
 export const LoginContainer = styled.section`
-  padding: 0 1.3rem;
+  padding: 0 1.7rem;
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -24,8 +24,15 @@ export const LoginContainer = styled.section`
 `;
 
 export const Header = styled.header`
-  padding: 2.5rem 0;
+  padding-top: 2.5rem;
   text-align: center;
+
+  & > h3 {
+    padding: 2.3rem 0;
+    font-size: ${({ theme }) => theme.fontSizes.medium};
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.gray};
+  }
 `;
 
 export const Logo = styled.img`
@@ -50,7 +57,9 @@ export const Input = styled.input`
   width: 100%;
   font-size: ${({ theme }) => theme.fontSizes.small};
   background-color: ${({ theme }) => theme.colors.lightgray};
-  border: 1px solid ${({ theme }) => theme.colors.gray};
+  border: 1px solid
+    ${(props) =>
+      props.isChecked ? props.theme.colors.gray : props.theme.colors.red};
   border-radius: 3px;
 `;
 
@@ -61,6 +70,6 @@ export const Button = styled.button`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.blue};
-  opacity: 0.5;
+  opacity: ${(props) => (props.isValid ? 1 : 0.5)};
   border-radius: 3px;
 `;
