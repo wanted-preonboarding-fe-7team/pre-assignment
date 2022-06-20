@@ -1,7 +1,5 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useRef, useState } from 'react';
-import { emailValid, passwordValid } from '../../utils/util';
+import React, { useRef, useState } from 'react';
+import { validator } from '../../utils/util';
 import {
   Wrapper,
   LoginContainer,
@@ -14,47 +12,66 @@ import {
 } from './style';
 
 const LoginPage = () => {
-  const [validCheck, setValidCheck] = useState(false);
   const [emailCheck, setEmailCheck] = useState(true);
   const [passwordCheck, setPasswordCheck] = useState(true);
+  const [validCheck, setValidCheck] = useState(false);
 
   const emailRef = useRef('');
   const passwordRef = useRef('');
 
   const handleChangeEmail = (e) => {
+    const [emailValid, passwordValid] = validator(
+      emailRef.current.value,
+      passwordRef.current.value
+    );
+
     if (e.target.value === '') {
       setEmailCheck(true);
-    } else {
-      const isValid = emailValid(e.target.value);
-      setEmailCheck(isValid);
+      setValidCheck(false);
+      return;
     }
+
+    if (emailValid) {
+      setEmailCheck(true);
+      if (passwordValid) {
+        setValidCheck(true);
+        return;
+      }
+      return;
+    }
+
+    setValidCheck(false);
+    setEmailCheck(false);
   };
 
   const handleChangePassword = (e) => {
+    const [emailValid, passwordValid] = validator(
+      emailRef.current.value,
+      passwordRef.current.value
+    );
+
     if (e.target.value === '') {
       setPasswordCheck(true);
-    } else {
-      const isValid = passwordValid(e.target.value);
-      setPasswordCheck(isValid);
+      setValidCheck(false);
+      return;
     }
+
+    if (passwordValid) {
+      setPasswordCheck(true);
+      if (emailValid) {
+        setValidCheck(true);
+        return;
+      }
+      return;
+    }
+
+    setValidCheck(false);
+    setPasswordCheck(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
-  useEffect(() => {
-    if (
-      emailRef.current.value &&
-      passwordRef.current.value &&
-      emailCheck &&
-      passwordCheck
-    ) {
-      setValidCheck(true);
-    } else {
-      setValidCheck(false);
-    }
-  }, [emailCheck, passwordCheck]);
 
   return (
     <Wrapper>
