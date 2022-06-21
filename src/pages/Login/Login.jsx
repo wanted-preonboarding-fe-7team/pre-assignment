@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from 'react';
 import { Logo, TextInput } from 'componenets/common';
 import theme from 'styles/theme';
 import storageUtils from 'utils/storage';
-import isEmpty from 'utils/utils';
 
 import { Wrapper, ButtonLink } from './Login.style';
 
@@ -45,22 +44,11 @@ const Login = () => {
           />
         </div>
         <ButtonLink
-          to="/"
           onClick={() => {
             const currentId = $inputId.current.value;
             const currentPw = $inputPw.current.value;
 
-            if (isEmpty(currentId)) {
-              alert('사용자 정보를 입력해주세요.');
-              $inputId.current.focus();
-              return;
-            }
-
-            if (isEmpty(currentPw)) {
-              alert('비밀번호를 입력해주세요.');
-              $inputPw.current.focus();
-              return;
-            }
+            saveLoginData({ id: currentId, pw: currentPw });
           }}
           disabled={isDisabled}
         >

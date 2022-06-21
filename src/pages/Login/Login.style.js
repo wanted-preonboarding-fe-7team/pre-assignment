@@ -26,15 +26,19 @@ const Wrapper = styled.div`
   }
 `;
 
-const ButtonLink = styled(Link)`
+const ButtonLink = styled.button`
   width: 100%;
   height: 40px;
-  line-height: 40px;
   color: ${({ theme: { color } }) => color.white};
+  font-size: 1rem;
   font-weight: 700;
-  background-color: ${({ theme: { color }, disabled }) =>
-    disabled ? color.blue1 : color.blue2};
+  background-color: ${({ theme: { color } }) => color.blue2};
   border-radius: ${({ theme: { border } }) => border.radius.login};
+
+  &:disabled {
+    background-color: ${({ theme: { color } }) => color.blue1};
+    cursor: default;
+  }
 `;
 
 export { Wrapper, ButtonLink };
