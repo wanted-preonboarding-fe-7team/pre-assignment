@@ -1,4 +1,4 @@
-import TextInput from 'componenets/common/TextInput';
+import TextInput from 'componenets/common/TextInput/TextInput';
 import theme from 'styles/theme';
 
 import { Wrapper, LoginArea } from './Login.style';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import styled from 'styled-components';
+import CustomInput from './TextInput.style';
 
 const TextInput = ({ placeholder, size, borderStyle, borderRadius }) => {
   const [inputText, setInputText] = useState('');
@@ -24,15 +24,3 @@ const TextInput = ({ placeholder, size, borderStyle, borderRadius }) => {
 };
 
 export default TextInput;
-
-const CustomInput = styled.input`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
-  border: ${({ borderStyle }) => borderStyle};
-  border-radius: ${({ borderRadius }) => borderRadius};
-  background-color: ${({ theme }) => theme.color.gray1};
-
-  & ::placeholder {
-    color: ${({ theme }) => theme.color.gray1};
-  }
-`;
