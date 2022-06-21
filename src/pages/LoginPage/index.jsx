@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { useEffect } from 'react';
+import { userData } from '../../utils/const';
 import { validator } from '../../utils/util';
 import {
   Wrapper,
@@ -71,7 +73,26 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (
+      emailRef.current.value !== userData.email ||
+      passwordRef.current.value != userData.password
+    ) {
+      alert('정보가 일치 하지 않습니다.');
+      return;
+    }
+
+    localStorage.setItem('email', emailRef.current.value);
+    localStorage.setItem('password', passwordRef.current.value);
+
+    location.href = '/home';
   };
+
+  useEffect(() => {
+    if (localStorage.getItem('email') && localStorage.getItem('password')) {
+      location.href = '/home';
+    }
+  }, []);
 
   return (
     <Wrapper>
@@ -103,7 +124,7 @@ const LoginPage = () => {
                 required
               />
             </InputBox>
-            <Button isValid={validCheck} disabled={validCheck} type="submit">
+            <Button isValid={validCheck} type="submit">
               로그인
             </Button>
           </LoginForm>
