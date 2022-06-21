@@ -32,7 +32,8 @@ const ButtonLink = styled(Link)`
   line-height: 40px;
   color: ${({ theme: { color } }) => color.white};
   font-weight: 700;
-  background-color: ${({ theme: { color } }) => color.blue1};
+  background-color: ${({ theme: { color }, disabled }) =>
+    disabled ? color.blue1 : color.blue2};
   border-radius: ${({ theme: { border } }) => border.radius.login};
 `;
 

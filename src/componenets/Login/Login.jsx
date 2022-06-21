@@ -1,9 +1,13 @@
+import { useState } from 'react';
+
 import { Logo, TextInput } from 'componenets/common';
 import theme from 'styles/theme';
 
 import { Wrapper, ButtonLink } from './Login.style';
 
 const Login = () => {
+  const [isDisabled, setIsDisabled] = useState(true);
+
   return (
     <Wrapper>
       <div className="login-area flex">
@@ -20,9 +24,14 @@ const Login = () => {
             size={{ height: '36px', width: '100%' }}
             borderStyle={theme.border.linear}
             borderRadius={theme.border.radius.login}
+            disabled={isDisabled}
           />
         </div>
-        <ButtonLink to="/" onClick={() => console.log('?')}>
+        <ButtonLink
+          to="/"
+          onClick={() => console.log('?')}
+          disabled={isDisabled}
+        >
           로그인
         </ButtonLink>
       </div>
