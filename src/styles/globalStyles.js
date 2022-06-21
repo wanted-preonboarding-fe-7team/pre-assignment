@@ -16,6 +16,18 @@ const GlobalStyles = createGlobalStyle`
     'Segoe UI Symbol', sans-serif;
   }
 
+  a {
+    text-decoration: none;
+  }
+
+  button { 
+    cursor: pointer;
+  }
+
+  .flex {
+    display: flex;
+  }
+
 `;
 
 export default GlobalStyles;
