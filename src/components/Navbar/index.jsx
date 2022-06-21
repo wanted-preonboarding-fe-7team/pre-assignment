@@ -4,7 +4,7 @@ import { IoHomeSharp } from 'react-icons/io5';
 import { ImCompass2 } from 'react-icons/im';
 import { FiSend, FiPlusSquare, FiHeart, FiLogOut } from 'react-icons/fi';
 
-const Navbar = ({ onLogout }) => {
+const Navbar = ({ onLogOut }) => {
   return (
     <Wrapper>
       <Header>
@@ -26,7 +26,7 @@ const Navbar = ({ onLogout }) => {
           <Icon>
             <FiHeart />
           </Icon>
-          <Icon>
+          <Icon onClick={onLogOut}>
             <FiLogOut />
           </Icon>
         </IconList>
