@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
+import FeedList from '../../components/FeedList';
 
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -9,7 +10,11 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (
+      !localStorage.getItem('email') ||
+      !localStorage.getItem('password') ||
+      !isLoggedIn
+    ) {
       localStorage.removeItem('email');
       localStorage.removeItem('password');
 
@@ -17,16 +22,11 @@ const Home = () => {
     }
   }, [isLoggedIn]);
 
-  useEffect(() => {
-    if (!localStorage.getItem('email') || !localStorage.getItem('password')) {
-      location.href = '/';
-    }
-  }, []);
-
   return (
-    <div>
+    <>
       <Navbar onLogOut={handleLogOut} />
-    </div>
+      <FeedList />
+    </>
   );
 };
 

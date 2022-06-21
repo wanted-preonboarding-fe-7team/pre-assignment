@@ -106,7 +106,7 @@ const LoginPage = () => {
             <InputBox>
               <Input
                 name="email"
-                type="text"
+                type="email"
                 ref={emailRef}
                 onChange={handleChangeEmail}
                 isChecked={emailCheck}
