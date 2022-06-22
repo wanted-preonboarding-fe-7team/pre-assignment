@@ -1,4 +1,5 @@
+import Icon from './Icon/Icon';
 import Logo from './Logo/Logo';
 import TextInput from './TextInput/TextInput';
 
-export { TextInput, Logo };
+export { Icon, TextInput, Logo };

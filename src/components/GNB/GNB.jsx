@@ -1,6 +1,7 @@
 import { Logo, TextInput } from 'components/common';
 import theme from 'styles/theme';
 
+import ButtonArea from './ButtonArea';
 import Wrapper from './GNB.styled';
 
 const GNB = () => {
@@ -12,6 +13,7 @@ const GNB = () => {
         placeholder="검색"
         borderRadius={theme.border.radius.gnb}
       />
+      <ButtonArea />
     </Wrapper>
   );
 };

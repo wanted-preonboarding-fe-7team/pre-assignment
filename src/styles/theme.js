@@ -3,6 +3,7 @@ const theme = {
     gray1: '#fafafa',
     gray2: '#dbdbdb',
     white: '#fff',
+    black: '#000',
     blue1: '#b2dffc',
     blue2: '#0095f6',
   },
@@ -16,6 +17,10 @@ const theme = {
       login: '3px',
       gnb: '8px',
     },
+  },
+  gnb: {
+    padding: '20px',
+    width: '1000px',
   },
 };
 
