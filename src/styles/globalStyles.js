@@ -33,6 +33,12 @@ const GlobalStyles = createGlobalStyle`
     align-items: center;
   }
 
+  .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+  }
+
 `;
 
 export default GlobalStyles;

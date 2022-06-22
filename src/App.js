@@ -10,7 +10,7 @@ function App() {
   return (
     <LoginContext.Provider value={{ loginData, setLoginData }}>
       <Routes>
-        <Route path="/" element={loginData ? <Main /> : <Login />} />
+        <Route path="/" element={(loginData && <Main />) || <Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </LoginContext.Provider>

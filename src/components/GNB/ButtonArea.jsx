@@ -40,7 +40,7 @@ const ButtonArea = () => {
       <Link to="/">
         <Icon icon="heart" />
       </Link>
-      <Link to="/" onClick={logoutClickHandler}>
+      <Link to="/" onClick={logoutClickHandler} title="로그아웃">
         <Icon icon="logout" />
       </Link>
     </ButtonAreaWrapper>
