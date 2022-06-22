@@ -49,6 +49,7 @@ const Login = () => {
             size={{ height: '36px', width: '100%' }}
             borderStyle={theme.border.linear}
             borderRadius={theme.border.radius.login}
+            id="email"
             ref={$inputId}
           />
           <TextInput
@@ -57,6 +58,7 @@ const Login = () => {
             size={{ height: '36px', width: '100%' }}
             borderStyle={theme.border.linear}
             borderRadius={theme.border.radius.login}
+            id="password"
             ref={$inputPw}
           />
         </div>
