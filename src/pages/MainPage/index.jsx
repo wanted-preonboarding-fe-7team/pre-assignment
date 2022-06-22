@@ -1,31 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { Wrapper } from './style';
 import Navbar from '../../components/Navbar';
 import FeedList from '../../components/FeedList';
 
 const Home = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
-  const handleLogOut = () => {
-    setIsLoggedIn(false);
-  };
-
   useEffect(() => {
-    if (
-      !localStorage.getItem('email') ||
-      !localStorage.getItem('password') ||
-      !isLoggedIn
-    ) {
+    if (!localStorage.getItem('email') || !localStorage.getItem('password')) {
       localStorage.removeItem('email');
       localStorage.removeItem('password');
 
       location.href = '/';
     }
-  }, [isLoggedIn]);
+  }, []);
 
   return (
     <>
-      <Navbar onLogOut={handleLogOut} />
-      <FeedList />
+      <Navbar />
+      <Wrapper>
+        <FeedList />
+      </Wrapper>
     </>
   );
 };

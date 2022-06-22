@@ -4,7 +4,13 @@ import { IoHomeSharp } from 'react-icons/io5';
 import { ImCompass2 } from 'react-icons/im';
 import { FiSend, FiPlusSquare, FiHeart, FiLogOut } from 'react-icons/fi';
 
-const Navbar = ({ onLogOut }) => {
+const Navbar = () => {
+  const onLogOut = () => {
+    localStorage.removeItem('email');
+    localStorage.removeItem('password');
+    location.href = '/';
+  };
+
   return (
     <Wrapper>
       <Header>
