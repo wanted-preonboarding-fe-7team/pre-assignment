@@ -1,16 +1,15 @@
+import LOCAL_STORAGE_KEY_NAME from 'constants';
+
 import { useRef, useState, useEffect, useContext } from 'react';
 
 import { Logo, TextInput } from 'components/common';
 import { LoginContext } from 'context/context';
-import { useNavigate } from 'react-router-dom';
 import theme from 'styles/theme';
 import storageUtils from 'utils/storage';
 
 import { LoginWrapper, ButtonLink } from './Login.style';
 
 const { setLocalStorage, getLocalStorage } = storageUtils;
-
-const LOCAL_STORAGE_KEY_NAME = 'Bstagram_login';
 
 const saveLoginData = (data) => setLocalStorage(LOCAL_STORAGE_KEY_NAME, data);
 
@@ -23,8 +22,6 @@ const Login = () => {
 
   const $inputId = useRef(null);
   const $inputPw = useRef(null);
-
-  const navigate = useNavigate();
 
   const isValidInput = {
     email: isValidId,
@@ -43,8 +40,6 @@ const Login = () => {
   const excuteLogin = (loginData) => {
     saveLoginData(loginData);
     setLoginData(loginData);
-
-    navigate('/main', { replace: true });
   };
 
   const handleLoginButtonClick = () => {
