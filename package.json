@@ -8,6 +8,7 @@
 		"@testing-library/user-event": "^13.5.0",
 		"react": "^18.1.0",
 		"react-dom": "^18.1.0",
+		"react-icons": "^4.4.0",
 		"react-router-dom": "^6.3.0",
 		"react-scripts": "5.0.1",
 		"styled-components": "^5.3.5",
@@ -45,6 +46,8 @@
 		"eslint-plugin-jsx-a11y": "^6.5.1",
 		"eslint-plugin-react": "^7.29.4",
 		"eslint-plugin-react-hooks": "^4.5.0",
-		"prettier": "2.6.2"
+		"node-sass": "^7.0.1",
+		"prettier": "2.6.2",
+		"sass": "^1.52.3"
 	}
 }
