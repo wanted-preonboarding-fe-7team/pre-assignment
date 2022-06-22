@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { LoginContext } from 'context/context';
-import { Login, Main } from 'pages';
+import { Login, Main, NotFound } from 'pages';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/main" element={<Main />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </LoginContext.Provider>
   );
