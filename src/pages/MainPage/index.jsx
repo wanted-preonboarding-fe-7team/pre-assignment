@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Wrapper } from './style';
 import Navbar from '../../components/Navbar';
 import FeedList from '../../components/FeedList';
@@ -7,14 +7,13 @@ import { getFeeds } from '../../api/feed';
 const Home = () => {
   const [feeds, setFeeds] = useState({});
 
-  const addComment = (feedId, nickname, content) => {
+  const addComment = useCallback((feedId, nickname, content) => {
     setFeeds((feeds) => {
       const updated = { ...feeds };
       updated[feedId].comments.push({ nickname, content });
-      console.log(updated);
       return updated;
     });
-  };
+  }, []);
 
   useEffect(() => {
     if (!localStorage.getItem('email') || !localStorage.getItem('password')) {

@@ -1,5 +1,4 @@
-import React, { useRef, useState } from 'react';
-import { useEffect } from 'react';
+import React, { useCallback, useRef, useState, useEffect } from 'react';
 import { userData } from '../../utils/const';
 import { validator } from '../../utils/util';
 import {
@@ -21,7 +20,7 @@ const LoginPage = () => {
   const emailRef = useRef('');
   const passwordRef = useRef('');
 
-  const handleChangeEmail = (e) => {
+  const handleChangeEmail = useCallback((e) => {
     const [emailValid, passwordValid] = validator(
       emailRef.current.value,
       passwordRef.current.value
@@ -44,9 +43,9 @@ const LoginPage = () => {
 
     setValidCheck(false);
     setEmailCheck(false);
-  };
+  }, []);
 
-  const handleChangePassword = (e) => {
+  const handleChangePassword = useCallback((e) => {
     const [emailValid, passwordValid] = validator(
       emailRef.current.value,
       passwordRef.current.value
@@ -69,9 +68,9 @@ const LoginPage = () => {
 
     setValidCheck(false);
     setPasswordCheck(false);
-  };
+  }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
     if (
@@ -86,7 +85,7 @@ const LoginPage = () => {
     localStorage.setItem('password', passwordRef.current.value);
 
     location.href = '/home';
-  };
+  }, []);
 
   useEffect(() => {
     if (localStorage.getItem('email') && localStorage.getItem('password')) {
