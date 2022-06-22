@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
 import LoginContext from 'context/context';
-import { Login } from 'pages';
-import Test from 'pages/Test';
+import { Login, Main } from 'pages';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -12,7 +11,7 @@ function App() {
     <LoginContext.Provider value={{ loginData, setLoginData }}>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/test" element={<Test />} />
+        <Route path="/main" element={<Main />} />
       </Routes>
     </LoginContext.Provider>
   );

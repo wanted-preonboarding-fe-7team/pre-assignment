@@ -14,6 +14,7 @@ const theme = {
     linear: '1px solid #dbdbdb',
     radius: {
       login: '3px',
+      gnb: '8px',
     },
   },
 };

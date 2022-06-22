@@ -28,6 +28,11 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
   }
 
+  .flex-center {
+    justify-content: center;
+    align-items: center;
+  }
+
 `;
 
 export default GlobalStyles;

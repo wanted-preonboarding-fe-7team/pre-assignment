@@ -1,10 +1,6 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: ${({ theme: { color } }) => color.gray1};
   height: 100vh;
 

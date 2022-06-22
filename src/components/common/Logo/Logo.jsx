@@ -1,9 +1,9 @@
-const Logo = () => {
+const Logo = ({ size = 3 }) => {
   return (
     <span
       style={{
         fontWeight: 700,
-        fontSize: '3rem',
+        fontSize: `${size}rem`,
         fontStyle: 'italic',
       }}
     >

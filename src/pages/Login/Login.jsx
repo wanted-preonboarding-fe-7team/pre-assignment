@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 
-import { Logo, TextInput } from 'componenets/common';
+import { Logo, TextInput } from 'components/common';
 import LoginContext from 'context/context';
 import { useNavigate } from 'react-router-dom';
 import theme from 'styles/theme';
@@ -32,7 +32,7 @@ const Login = () => {
     saveLoginData(loginData);
     setLoginData(loginData);
 
-    navigate('/test', { replace: true });
+    navigate('/main', { replace: true });
   };
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Login = () => {
   }, [$inputId]);
 
   return (
-    <Wrapper>
+    <Wrapper className="flex flex-center">
       <div className="login-area flex">
         <Logo />
         <div className="login-input-area">

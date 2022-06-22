@@ -1,5 +1,7 @@
 import { forwardRef, useState } from 'react';
 
+import theme from 'styles/theme';
+
 import CustomInput from './TextInput.style';
 
 const TextInput = forwardRef(
