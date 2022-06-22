@@ -5,7 +5,16 @@ import FeedList from '../../components/FeedList';
 import { getFeeds } from '../../api/feed';
 
 const Home = () => {
-  const [feeds, setFeeds] = useState([]);
+  const [feeds, setFeeds] = useState({});
+
+  const addComment = (feedId, nickname, content) => {
+    setFeeds((feeds) => {
+      const updated = { ...feeds };
+      updated[feedId].comments.push({ nickname, content });
+      console.log(updated);
+      return updated;
+    });
+  };
 
   useEffect(() => {
     if (!localStorage.getItem('email') || !localStorage.getItem('password')) {
@@ -26,7 +35,7 @@ const Home = () => {
     <>
       <Navbar />
       <Wrapper>
-        <FeedList feeds={feeds} />
+        <FeedList feeds={feeds} addComment={addComment} />
       </Wrapper>
     </>
   );

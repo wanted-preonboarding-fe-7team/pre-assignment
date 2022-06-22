@@ -2,11 +2,16 @@ import React from 'react';
 import Feed from '../Feed';
 import { Ul } from './style';
 
-const FeedList = ({ feeds }) => {
+const FeedList = ({ feeds, addComment }) => {
   return (
     <Ul>
-      {feeds.map((feed) => (
-        <Feed key={feed.id} feed={feed} />
+      {Object.keys(feeds).map((feedId) => (
+        <Feed
+          key={feedId}
+          feed={feeds[feedId]}
+          feedId={feedId}
+          addComment={addComment}
+        />
       ))}
     </Ul>
   );

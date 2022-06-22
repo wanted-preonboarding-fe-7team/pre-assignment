@@ -16,7 +16,7 @@ import { HiOutlineDotsHorizontal } from 'react-icons/hi';
 import { FiHeart, FiSend, FiBookmark } from 'react-icons/fi';
 import { FaRegComment } from 'react-icons/fa';
 
-const Feed = ({ feed }) => {
+const Feed = ({ feed, feedId, addComment }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -55,7 +55,7 @@ const Feed = ({ feed }) => {
         <Like>좋아요 {feed.like}개</Like>
         <Comments comments={feed.comments} />
       </Contents>
-      <CommentForm />
+      <CommentForm feedId={feedId} addComment={addComment} />
     </Li>
   );
 };

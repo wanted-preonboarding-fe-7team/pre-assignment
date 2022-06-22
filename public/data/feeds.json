@@ -1,7 +1,6 @@
 {
-  "feeds": [
-    {
-      "id": 1,
+  "feeds": {
+    "1": {
       "avatar": "../images/doji.png",
       "src": "https://source.unsplash.com/random/600x500",
       "nickname": "끼야아아알",
@@ -11,8 +10,7 @@
       ],
       "like": 2
     },
-    {
-      "id": 2,
+    "2": {
       "avatar": "../images/ttt.png",
       "src": "https://source.unsplash.com/random/900x500",
       "nickname": "괴물123",
@@ -23,13 +21,12 @@
       ],
       "like": 0
     },
-    {
-      "id": 3,
+    "3": {
       "avatar": "../images/kakaoTalk.jpeg",
       "src": "https://source.unsplash.com/random/700x1080",
       "nickname": "cndusqls98",
       "comments": [],
       "like": 4
     }
-  ]
+  }
 }
