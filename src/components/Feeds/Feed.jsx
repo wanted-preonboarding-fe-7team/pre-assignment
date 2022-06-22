@@ -1,12 +1,13 @@
 import { Icon } from 'components/common';
+import theme from 'styles/theme';
 
 import Avatar from './Avatar';
-import FeedWrapper from './Feed.style';
+import { FeedWrapper, FeedHeader, FeedImageArea } from './Feed.style';
 
 const Feed = ({ userId }) => {
   return (
     <FeedWrapper>
-      <div className="feed-header flex">
+      <FeedHeader className="feed-header flex">
         <div className="feed-item flex">
           <Avatar userEmail={userId} />
           <div className="user-info flex">
@@ -17,7 +18,13 @@ const Feed = ({ userId }) => {
         <div className="feed-item flex flex-center icon">
           <Icon icon="dots" />
         </div>
-      </div>
+      </FeedHeader>
+      <FeedImageArea className="flex flex-center">
+        <img
+          src="https://source.unsplash.com/random/700x1080"
+          width={theme.feed.width}
+        />
+      </FeedImageArea>
     </FeedWrapper>
   );
 };

@@ -5,13 +5,14 @@ const FeedWrapper = styled.article`
   border-radius: ${({ theme: { border } }) => border.radius.feed};
   padding: ${({ theme: { feed } }) => feed.padding} 0;
   height: ${({ theme: { feed } }) => feed.height};
+  overflow: hidden;
+`;
 
-  .feed-header {
-    height: 50px;
-    font-size: 14px;
-    padding: ${({ theme: { feed } }) => feed.padding};
-    justify-content: space-between;
-  }
+const FeedHeader = styled.div`
+  height: 50px;
+  font-size: 14px;
+  padding: ${({ theme: { feed } }) => feed.padding};
+  justify-content: space-between;
 
   .feed-item {
     height: 100%;
@@ -37,4 +38,11 @@ const FeedWrapper = styled.article`
   }
 `;
 
-export default FeedWrapper;
+const FeedImageArea = styled.div`
+  width: ${({ theme: { feed } }) => feed.width};
+  height: ${({ theme: { feed } }) => feed.width};
+  overflow: hidden;
+  background-color: ${({ theme: { color } }) => color.white};
+`;
+
+export { FeedWrapper, FeedHeader, FeedImageArea };
