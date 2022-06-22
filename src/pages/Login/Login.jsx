@@ -13,7 +13,6 @@ const { setLocalStorage, getLocalStorage } = storageUtils;
 const LOCAL_STORAGE_KEY_NAME = 'Bstagram_login';
 
 const saveLoginData = (data) => setLocalStorage(LOCAL_STORAGE_KEY_NAME, data);
-const getLoginData = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
 
 const Login = () => {
   const { setLoginData } = useContext(LoginContext);
@@ -41,15 +40,32 @@ const Login = () => {
     },
   };
 
+  const excuteLogin = (loginData) => {
+    saveLoginData(loginData);
+    setLoginData(loginData);
+
+    navigate('/main', { replace: true });
+  };
+
   const handleLoginButtonClick = () => {
     const currentId = $inputId.current.value;
     const currentPw = $inputPw.current.value;
     const loginData = { id: currentId, pw: currentPw };
 
-    saveLoginData(loginData);
-    setLoginData(loginData);
+    const prevLoginData = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
 
-    navigate('/main', { replace: true });
+    if (!prevLoginData) {
+      excuteLogin(loginData);
+      return;
+    }
+
+    if (JSON.stringify(loginData) !== JSON.stringify(prevLoginData)) {
+      alert('아이디(이메일)과 비밀번호를 확인해주세요.');
+      $inputId.current.focus();
+      return;
+    }
+
+    excuteLogin(loginData);
   };
 
   useEffect(() => {
