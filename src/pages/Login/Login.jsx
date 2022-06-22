@@ -1,6 +1,8 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useContext } from 'react';
 
 import { Logo, TextInput } from 'componenets/common';
+import LoginContext from 'context/context';
+import { useNavigate } from 'react-router-dom';
 import theme from 'styles/theme';
 import storageUtils from 'utils/storage';
 
@@ -14,10 +16,24 @@ const saveLoginData = (data) => setLocalStorage(LOCAL_STORAGE_KEY_NAME, data);
 const getLoginData = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
 
 const Login = () => {
-  const [isDisabled, setIsDisabled] = useState(true);
+  const { setLoginData } = useContext(LoginContext);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const $inputId = useRef(null);
   const $inputPw = useRef(null);
+
+  const navigate = useNavigate();
+
+  const handleLoginButtonClick = () => {
+    const currentId = $inputId.current.value;
+    const currentPw = $inputPw.current.value;
+    const loginData = { id: currentId, pw: currentPw };
+
+    saveLoginData(loginData);
+    setLoginData(loginData);
+
+    navigate('/test', { replace: true });
+  };
 
   useEffect(() => {
     $inputId.current.focus();
@@ -43,15 +59,7 @@ const Login = () => {
             ref={$inputPw}
           />
         </div>
-        <ButtonLink
-          onClick={() => {
-            const currentId = $inputId.current.value;
-            const currentPw = $inputPw.current.value;
-
-            saveLoginData({ id: currentId, pw: currentPw });
-          }}
-          disabled={isDisabled}
-        >
+        <ButtonLink onClick={handleLoginButtonClick} disabled={isDisabled}>
           로그인
         </ButtonLink>
       </div>
