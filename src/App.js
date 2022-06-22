@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import LoginContext from 'context/context';
+import { LoginContext } from 'context/context';
 import { Login, Main } from 'pages';
 import { Route, Routes } from 'react-router-dom';
 

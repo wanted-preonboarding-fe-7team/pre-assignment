@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
 import { GNB } from 'components';
-import LoginContext from 'context/context';
+import { LoginContext } from 'context/context';
 import { Navigate } from 'react-router-dom';
 
 import MainWrapper from './Main.style';

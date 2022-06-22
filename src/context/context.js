@@ -1,5 +1,6 @@
 import { createContext } from 'react';
 
 const LoginContext = createContext();
+const LoginButtonContext = createContext();
 
-export default LoginContext;
+export { LoginContext, LoginButtonContext };

@@ -1,5 +1,6 @@
-import { forwardRef, useState } from 'react';
+import { useContext, forwardRef, useState } from 'react';
 
+import { LoginContext } from 'context/context';
 import theme from 'styles/theme';
 import checkValidInput from 'utils/checkValidInput';
 
@@ -14,13 +15,15 @@ const TextInput = forwardRef(
     { placeholder, size, borderStyle, borderRadius, type = 'text', id },
     ref
   ) => {
+    const { isValidInput, setIsValidInput } = useContext(LoginContext);
+
     const [inputText, setInputText] = useState('');
-    const [isValidInput, setIsValidInput] = useState(false);
 
     const onChange = ({ target }) => {
-      setInputText(target.value);
-      setIsValidInput(checkValidInput[id](target.value));
-      console.log(checkValidInput[id](target.value), target.value);
+      const inputValue = target.value;
+
+      setInputText(inputValue);
+      setIsValidInput[id](checkValidInput[id](inputValue));
     };
 
     return (
@@ -31,7 +34,7 @@ const TextInput = forwardRef(
         width={size.width}
         height={size.height}
         borderStyle={
-          (inputText && isValidInput) || !inputText
+          (inputText && isValidInput[id]) || !inputText
             ? borderStyle
             : borderStyles.error
         }
