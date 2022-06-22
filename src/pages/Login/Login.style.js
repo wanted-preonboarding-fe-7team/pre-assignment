@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+const LoginWrapper = styled.div`
   background-color: ${({ theme: { color } }) => color.gray1};
   height: 100vh;
 
@@ -37,4 +37,4 @@ const ButtonLink = styled.button`
   }
 `;
 
-export { Wrapper, ButtonLink };
+export { LoginWrapper, ButtonLink };

@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import theme from 'styles/theme';
 import storageUtils from 'utils/storage';
 
-import { Wrapper, ButtonLink } from './Login.style';
+import { LoginWrapper, ButtonLink } from './Login.style';
 
 const { setLocalStorage, getLocalStorage } = storageUtils;
 
@@ -40,7 +40,7 @@ const Login = () => {
   }, [$inputId]);
 
   return (
-    <Wrapper className="flex flex-center">
+    <LoginWrapper className="flex flex-center">
       <div className="login-area flex">
         <Logo />
         <div className="login-input-area">
@@ -64,7 +64,7 @@ const Login = () => {
           로그인
         </ButtonLink>
       </div>
-    </Wrapper>
+    </LoginWrapper>
   );
 };
 
