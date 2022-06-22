@@ -35,6 +35,7 @@ export const Search = styled.input`
     display: none;
   }
   ::placeholder {
+    font-weight: bold;
     color: ${({ theme }) => theme.colors.gray};
   }
 `;
