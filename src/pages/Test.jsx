@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react';
 
 import LoginContext from 'context/context';
 import { Navigate } from 'react-router-dom';
-// import { useEffect } from 'react';
 
 const Test = () => {
   const { loginData } = useContext(LoginContext);

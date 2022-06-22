@@ -52,6 +52,7 @@ const Login = () => {
             ref={$inputId}
           />
           <TextInput
+            type="password"
             placeholder="비밀번호"
             size={{ height: '36px', width: '100%' }}
             borderStyle={theme.border.linear}

@@ -3,7 +3,7 @@ import { forwardRef, useState } from 'react';
 import CustomInput from './TextInput.style';
 
 const TextInput = forwardRef(
-  ({ placeholder, size, borderStyle, borderRadius }, ref) => {
+  ({ placeholder, size, borderStyle, borderRadius, type = 'text' }, ref) => {
     const [inputText, setInputText] = useState('');
 
     const onChange = ({ target }) => {
@@ -12,7 +12,7 @@ const TextInput = forwardRef(
 
     return (
       <CustomInput
-        type="text"
+        type={type}
         onChange={onChange}
         placeholder={placeholder}
         width={size.width}
