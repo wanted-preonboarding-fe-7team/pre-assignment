@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 6px 12px;
+  padding: ${({ theme: { feed } }) => feed.padding};
 `;
 
 const Buttons = styled.div`

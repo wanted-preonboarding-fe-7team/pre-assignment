@@ -11,7 +11,7 @@ const FeedWrapper = styled.article`
 const FeedImageArea = styled.div`
   ${flexCenterStyle};
   width: ${({ theme: { feed } }) => feed.width};
-  max-height: ${({ theme: { feed } }) => feed.width};
+  max-height: ${({ theme: { feed } }) => feed.height};
   overflow: hidden;
   background-color: ${({ theme: { color } }) => color.white};
 `;
