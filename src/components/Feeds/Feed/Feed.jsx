@@ -1,9 +1,9 @@
 import theme from 'styles/theme';
 
 import { FeedWrapper, FeedImageArea } from './Feed.style';
-import FeedButtonsArea from './FeedButtonsArea';
-import FeedHeader from './FeedHeader';
-import LikedArea from './LikedArea';
+import FeedButtonsArea from './FeedItem/FeedButtonsArea';
+import FeedHeader from './FeedItem/FeedHeader';
+import LikedArea from './FeedItem/LikedArea';
 
 const Feed = ({ userId }) => {
   return (
