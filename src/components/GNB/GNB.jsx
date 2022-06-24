@@ -2,12 +2,12 @@ import { Logo, TextInput } from 'components/common';
 import theme from 'styles/theme';
 
 import ButtonArea from './ButtonArea';
-import { GNBWrapper, SearchBar } from './GNB.styled';
+import { GNBItems, GNBWrapper, SearchBar } from './GNB.styled';
 
 const GNB = () => {
   return (
     <GNBWrapper>
-      <div className="gnb-items flex">
+      <GNBItems>
         <Logo size={2} />
         <SearchBar>
           <TextInput
@@ -17,7 +17,7 @@ const GNB = () => {
           />
         </SearchBar>
         <ButtonArea />
-      </div>
+      </GNBItems>
     </GNBWrapper>
   );
 };

@@ -1,24 +1,27 @@
 import styled from 'styled-components';
+import { flexCenterStyle } from 'styles/commonStyles';
 
-const LoginWrapper = styled.div`
+const Wrapper = styled.div`
+  ${flexCenterStyle};
   background-color: ${({ theme: { color } }) => color.gray1};
   height: 100vh;
+`;
 
-  .login-area {
-    width: ${({ theme }) => theme.login.width};
-    height: ${({ theme }) => theme.login.height};
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-    background-color: ${({ theme: { color } }) => color.white};
-    border: 1px solid ${({ theme: { color } }) => color.gray2};
-    padding: 3rem;
-  }
+const LoginArea = styled.div`
+  width: ${({ theme }) => theme.login.width};
+  height: ${({ theme }) => theme.login.height};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: ${({ theme: { color } }) => color.white};
+  border: 1px solid ${({ theme: { color } }) => color.gray2};
+  padding: 3rem;
+`;
 
-  .login-input-area {
-    > :not(:last-child) {
-      margin-bottom: 1rem;
-    }
+const LoginInputArea = styled.div`
+  > :not(:last-child) {
+    margin-bottom: 1rem;
   }
 `;
 
@@ -37,4 +40,4 @@ const ButtonLink = styled.button`
   }
 `;
 
-export { LoginWrapper, ButtonLink };
+export { Wrapper, ButtonLink, LoginArea, LoginInputArea };

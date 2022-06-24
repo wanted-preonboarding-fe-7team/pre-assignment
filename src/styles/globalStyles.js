@@ -23,22 +23,6 @@ const GlobalStyles = createGlobalStyle`
   button { 
     cursor: pointer;
   }
-
-  .flex {
-    display: flex;
-  }
-
-  .flex-center {
-    justify-content: center;
-    align-items: center;
-  }
-
-  .ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space:nowrap;
-  }
-
 `;
 
 export default GlobalStyles;

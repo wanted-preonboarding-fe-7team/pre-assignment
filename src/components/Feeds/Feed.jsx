@@ -2,26 +2,35 @@ import { Icon } from 'components/common';
 import theme from 'styles/theme';
 
 import Avatar from './Avatar';
-import { FeedWrapper, FeedHeader, FeedImageArea } from './Feed.style';
+import {
+  FeedWrapper,
+  FeedHeader,
+  FeedImageArea,
+  FeedItem,
+  FeedIconItem,
+  UserInfo,
+  UserMail,
+  UserDesc,
+} from './Feed.style';
 
 const Feed = ({ userId }) => {
   return (
     <FeedWrapper>
-      <FeedHeader className="feed-header flex">
-        <div className="feed-item flex">
+      <FeedHeader>
+        <FeedItem>
           <Avatar userEmail={userId} />
-          <div className="user-info flex">
-            <p className="user-mail">{userId}</p>
-            <p className="user-desc">유저 설명</p>
-          </div>
-        </div>
-        <div className="feed-item flex flex-center icon">
+          <UserInfo>
+            <UserMail>{userId}</UserMail>
+            <UserDesc>유저 설명</UserDesc>
+          </UserInfo>
+        </FeedItem>
+        <FeedIconItem>
           <Icon icon="dots" />
-        </div>
+        </FeedIconItem>
       </FeedHeader>
-      <FeedImageArea className="flex flex-center">
+      <FeedImageArea>
         <img
-          src="https://source.unsplash.com/random/700x1080"
+          src="https://source.unsplash.com/random/300x1500"
           width={theme.feed.width}
         />
       </FeedImageArea>

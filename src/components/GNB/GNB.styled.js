@@ -8,19 +8,20 @@ const GNBWrapper = styled.div`
   background-color: ${({ theme: { color } }) => color.white};
   border-bottom: 1px solid ${({ theme: { color } }) => color.gray3};
 
-  .gnb-items {
-    width: 100%;
-    max-width: ${({ theme: { gnb } }) => gnb.width};
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 ${({ theme: { gnb } }) => gnb.padding};
-  }
-
   > :not(:last-child) {
     margin-right: 1rem;
   }
+`;
+
+const GNBItems = styled.div`
+  width: 100%;
+  max-width: ${({ theme: { gnb } }) => gnb.width};
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 ${({ theme: { gnb } }) => gnb.padding};
 `;
 
 const SearchBar = styled.div`
@@ -30,4 +31,4 @@ const SearchBar = styled.div`
   }
 `;
 
-export { GNBWrapper, SearchBar };
+export { GNBWrapper, SearchBar, GNBItems };

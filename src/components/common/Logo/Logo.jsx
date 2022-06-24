@@ -1,15 +1,7 @@
+import LogoText from './Logo.styled';
+
 const Logo = ({ size = 3 }) => {
-  return (
-    <span
-      style={{
-        fontWeight: 700,
-        fontSize: `${size}rem`,
-        fontStyle: 'italic',
-      }}
-    >
-      Bstagram
-    </span>
-  );
+  return <LogoText size={size}>Bstagram</LogoText>;
 };
 
 export default Logo;

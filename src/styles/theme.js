@@ -34,7 +34,6 @@ const theme = {
   feed: {
     padding: '8px',
     width: '470px',
-    height: '752px',
   },
 };
 

@@ -7,7 +7,7 @@ import { LoginContext } from 'context/context';
 import theme from 'styles/theme';
 import storageUtils from 'utils/storage';
 
-import { LoginWrapper, ButtonLink } from './Login.style';
+import { Wrapper, ButtonLink, LoginArea, LoginInputArea } from './Login.style';
 
 const { setLocalStorage, getLocalStorage } = storageUtils;
 
@@ -68,11 +68,11 @@ const Login = () => {
   }, [$inputId]);
 
   return (
-    <LoginWrapper className="flex flex-center">
-      <div className="login-area flex">
+    <Wrapper>
+      <LoginArea>
         <LoginContext.Provider value={{ isValidInput, setIsValidInput }}>
           <Logo />
-          <div className="login-input-area">
+          <LoginInputArea>
             <TextInput
               placeholder="전화번호, 사용자 이름 또는 이메일"
               size={{ height: '36px', width: '100%' }}
@@ -90,7 +90,7 @@ const Login = () => {
               id="password"
               ref={$inputPw}
             />
-          </div>
+          </LoginInputArea>
           <ButtonLink
             onClick={handleLoginButtonClick}
             disabled={!isButtonActive}
@@ -98,8 +98,8 @@ const Login = () => {
             로그인
           </ButtonLink>
         </LoginContext.Provider>
-      </div>
-    </LoginWrapper>
+      </LoginArea>
+    </Wrapper>
   );
 };
 
