@@ -16,11 +16,11 @@ const removeLoginDataFromLocalStorage = removeFromLocalStorage(
 );
 
 const ButtonArea = () => {
-  const { setLoginData } = useContext(LoginContext);
+  const { setIsLoggedIn } = useContext(LoginContext);
 
   const logoutClickHandler = () => {
     removeLoginDataFromLocalStorage();
-    setLoginData(null);
+    setIsLoggedIn(null);
   };
 
   return (

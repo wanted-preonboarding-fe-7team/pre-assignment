@@ -14,7 +14,7 @@ const { setLocalStorage, getLocalStorage } = storageUtils;
 const saveLoginData = (data) => setLocalStorage(LOCAL_STORAGE_KEY_NAME, data);
 
 const Login = () => {
-  const { setLoginData } = useContext(LoginContext);
+  const { setIsLoggedIn } = useContext(LoginContext);
   const [isValidId, setIsValidId] = useState(false);
   const [isValidPw, setIsValidPw] = useState(false);
 
@@ -39,7 +39,7 @@ const Login = () => {
 
   const excuteLogin = (loginData) => {
     saveLoginData(loginData);
-    setLoginData(loginData);
+    setIsLoggedIn(loginData);
   };
 
   const handleLoginButtonClick = () => {

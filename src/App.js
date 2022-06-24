@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
 import { LoginContext } from 'context/context';
-import { Login, Main, NotFound } from 'pages';
+import { Home, NotFound } from 'pages';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [loginData, setLoginData] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
 
   return (
-    <LoginContext.Provider value={{ loginData, setLoginData }}>
+    <LoginContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
       <Routes>
-        <Route path="/" element={(loginData && <Main />) || <Login />} />
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </LoginContext.Provider>
