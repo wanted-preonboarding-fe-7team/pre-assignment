@@ -1,4 +1,6 @@
 import { ReactComponent as Add } from 'assets/add.svg';
+import { ReactComponent as Bookmark } from 'assets/bookmark.svg';
+import { ReactComponent as Comment } from 'assets/comment.svg';
 import { ReactComponent as Compass } from 'assets/compass.svg';
 import { ReactComponent as Heart } from 'assets/heart.svg';
 import { ReactComponent as Home } from 'assets/home.svg';
@@ -15,6 +17,8 @@ const iconComponents = {
   logout: Logout,
   message: Message,
   dots: ThreeDots,
+  comment: Comment,
+  bookmark: Bookmark,
 };
 const Icon = ({
   icon,

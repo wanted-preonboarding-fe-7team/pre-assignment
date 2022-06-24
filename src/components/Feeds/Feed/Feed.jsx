@@ -12,6 +12,7 @@ import {
   UserMail,
   UserDesc,
 } from './Feed.style';
+import FeedButtonsArea from './FeedButtonsArea';
 
 const Feed = ({ userId }) => {
   return (
@@ -34,6 +35,7 @@ const Feed = ({ userId }) => {
           width={theme.feed.width}
         />
       </FeedImageArea>
+      <FeedButtonsArea />
     </FeedWrapper>
   );
 };
