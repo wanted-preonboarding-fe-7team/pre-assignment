@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/gnb.scss';
 import Feed from '../components/Feed';
 import { FiSearch } from 'react-icons/fi';
@@ -10,16 +10,34 @@ import { FaRegPaperPlane } from 'react-icons/fa';
 import { FiLogOut } from 'react-icons/fi';
 import { useNavigate, Link } from 'react-router-dom';
 
-//Feeds의 Image가 로딩된 후 컴포넌트가 로딩(image.onload)
 function GNB() {
   const navigate = useNavigate();
   const id = localStorage.getItem('id');
   const pw = localStorage.getItem('pw');
+  const [list, setList] = useState([]); //배열
+
+  //json 파일 가져오기
+  useEffect(() => {
+    fetch('data/feedList.json', {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        setList(myJson);
+      });
+  }, []);
+
   //url접근 막기
   if (id === null || pw === null) {
     alert('로그인 정보가 없습니다.');
     navigate('/');
   }
+
   //로그아웃
   function logout() {
     console.log('logout');
@@ -29,6 +47,7 @@ function GNB() {
     //메인으로 이동
     navigate('/');
   }
+
   return (
     <>
       <div className="main-top">
@@ -58,7 +77,9 @@ function GNB() {
       </div>
       {/* 피드 */}
       <div className="feed-box">
-        <Feed />
+        {list.map((data) => {
+          return <Feed list={data} key={data.id} />;
+        })}
       </div>
     </>
   );

@@ -1,26 +1,26 @@
 [
   {
+    "id": 1,
     "image": "https://source.unsplash.com/random/600x500",
     "like": 12550,
-    "id": "wanted",
+    "feedId": "wanted",
     "title": "원티드 프리온보딩코스를 소개합니다",
-    "comment": 1371,
     "time": 11
   },
   {
+    "id": 2,
     "image": "https://source.unsplash.com/random/900x500",
-    "like": 12550,
-    "id": "front",
+    "like": 581,
+    "feedId": "front",
     "title": "신입은 어디서 경험을 쌓고 어떻게 취업하나요?",
-    "comment": 2210,
     "time": 5
   },
   {
+    "id": 3,
     "image": "https://source.unsplash.com/random/700x1080",
-    "like": 12550,
-    "id": "developer",
+    "like": 3391,
+    "feedId": "developer",
     "title": "기업 실전 과제로 ‘현실’ 직무를 미리 만나고,연계 취업까지 한번에!",
-    "comment": 684,
     "time": 24
   }
 ]

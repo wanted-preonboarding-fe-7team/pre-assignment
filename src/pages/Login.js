@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.scss';
 
-//랜더링 최적화- Ref 사용
 function Login() {
   const [inputId, setInputId] = useState('');
   const [inputPw, setInputPw] = useState('');
@@ -42,6 +41,7 @@ function Login() {
       setDisabled(false);
     }
   };
+
   // login 버튼 클릭 이벤트
   const onClickLogin = () => {
     const id = localStorage.getItem('id');
