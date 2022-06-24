@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import GNB from './pages/GNB';
-import Empty from './pages/Empty';
 import './App.css';
 
 // import PreAssignmentGuide from './pages/PreAssignmentGuide';
@@ -14,7 +13,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/main" element={<GNB />} />
-          <Route path="/*" element={<Empty />} />
         </Routes>
       </Router>
     </div>

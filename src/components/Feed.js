@@ -8,9 +8,11 @@ import { VscSmiley } from 'react-icons/vsc';
 
 function Feed() {
   const [list, setList] = useState([]);
-  const [inputComment, setInputComment] = useState('');
+  const [inputComment, setInputComment] = useState([]);
   const [isDisabled, setDisabled] = useState(true);
-
+  const [imgLoad, setImgLoad] = useState(true);
+  const [show, setShow] = useState(false);
+  const [commentCount, setCommentCount] = useState([]); //댓글 카운트 증가
   //json 파일 가져오기
   useEffect(() => {
     fetch('data/feedList.json', {
@@ -28,30 +30,61 @@ function Feed() {
         setList(myJson);
       });
   }, []);
-  const active = useRef();
-  //댓글 작성
-  const handleInputComment = (e) => {
-    setInputComment(e.target.value);
-    commentActive();
-  };
-  //댓글 게시 활성화
-  const commentActive = () => {
-    active.current.style = 'color:red';
-    setDisabled(false);
-  };
 
-  //댓글 업로드
-  function uploadComment() {
+  //댓글 작성
+  const active = useRef();
+  //setInputComment(data.list.map((item) =>item.comment )
+  //각 list의 comment array만들고 inputComment[index] = e.target.value
+  const handleInputComment = (e) => {
+    if (e.target.value != '') {
+      active.current.style = 'color:#0095f6;font-weight:bold';
+      // setInputComment(e.target.value);
+      // setInputComment([e.target.value]);
+      setInputComment(
+        list.map((item, i) => (inputComment[i] = e.target.value))
+      );
+
+      setDisabled(false);
+    } else {
+      active.current.style = 'color:#80c3f0';
+      setDisabled(true);
+    }
+  };
+  console.log(inputComment);
+  //클릭으로 댓글 업로드
+  const uploadComment = (e) => {
     setInputComment('');
     setDisabled(true);
+    active.current.style = 'color:#80c3f0';
+  };
+  //엔터로 댓글 업로드
+  const handleOnKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      uploadComment();
+    }
+  };
+  //더보기
+  function fullLength() {
+    setShow(true);
+    console.log(show);
   }
+  //댓글 추가시 +1
   return (
     <>
       {list.map((d, i) => {
         return (
-          <div className="feed-card" key={i}>
+          <div
+            className="feed-card"
+            key={i}
+            style={{ display: imgLoad ? 'none' : 'block' }}
+          >
             <div className="feed-img">
-              <img className="feed" alt="feed" src={d.image} />
+              <img
+                className="feed"
+                alt="feed"
+                src={d.image}
+                onLoad={() => setImgLoad(false)}
+              />
             </div>
             <ul className="banner-btn">
               <li></li>
@@ -71,12 +104,16 @@ function Feed() {
               <li>좋아요 {d.like.toLocaleString()} 개</li>
               <li>
                 {d.id}
-                {d.title.length > 8 ? (
-                  <span> {d.title}</span>
+                {d.title.length > 8 && show === false ? (
+                  <span> {d.title.substr(0, 15)}...</span>
                 ) : (
-                  <span> {d.title}...</span>
+                  <span> {d.title}</span>
                 )}
-                <span className="more">더보기</span>
+                {show === false ? (
+                  <span className="more" onClick={fullLength}>
+                    더보기
+                  </span>
+                ) : null}
               </li>
               <li>댓글 {d.comment.toLocaleString()} 개 모두보기</li>
               <li>{d.time}분 전</li>
@@ -88,12 +125,14 @@ function Feed() {
                   <input
                     type="text"
                     placeholder="댓글달기..."
-                    value={inputComment}
+                    value={inputComment[i] || ''}
                     onChange={handleInputComment}
+                    onKeyPress={handleOnKeyPress}
                   />
                 </div>
               </div>
               <button
+                type="submit"
                 className="upload"
                 ref={active}
                 disabled={isDisabled}

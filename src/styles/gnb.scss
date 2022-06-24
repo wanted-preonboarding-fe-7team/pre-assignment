@@ -39,6 +39,9 @@
     justify-content: space-around;
     display: flex;
   }
+  .logout {
+    cursor: pointer;
+  }
 }
 .feed-box {
   width: 500px;
@@ -64,6 +67,9 @@
       width: 100px;
       // justify-content: space-around;
       display: flex;
+    }
+    .logout {
+      cursor: pointer;
     }
   }
   .feed-box {

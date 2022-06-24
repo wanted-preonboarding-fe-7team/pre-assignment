@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/login.scss';
 
 //랜더링 최적화- Ref 사용
-//로그인 시 이메일과 비밀번호가 등록되어 있는 것과 일치 여부 확인
 function Login() {
   const [inputId, setInputId] = useState('');
   const [inputPw, setInputPw] = useState('');
@@ -12,7 +11,7 @@ function Login() {
     /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
   let checkPw =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
-  // input data 관리
+  // 아이디 정규식 확인 후 CSS변경
   const handleInputId = (e) => {
     setInputId(e.target.value);
     if (checkEmail.test(inputId)) {
@@ -22,6 +21,7 @@ function Login() {
       idRef.current.style = 'border:1px solid red';
     }
   };
+  // 비밀번호 정규식 확인 후 CSS변경
   const handleInputPw = (e) => {
     setInputPw(e.target.value);
     if (checkPw.test(inputPw)) {
@@ -35,13 +35,20 @@ function Login() {
   const idRef = useRef();
   const pwRef = useRef();
   const active = useRef();
-
+  //아이디 비밀번호 정규식 확인 후 로그인 버튼 활성화
   const loginActive = () => {
-    active.current.style = 'background:#0095f6';
-    setDisabled(false);
+    if (checkEmail.test(inputId) && checkPw.test(inputPw)) {
+      active.current.style = 'background:#0095f6';
+      setDisabled(false);
+    }
   };
   // login 버튼 클릭 이벤트
   const onClickLogin = () => {
+    const id = localStorage.getItem('id');
+    const pw = localStorage.getItem('pw');
+    if (id === inputId && pw === inputPw) {
+      alert('이미 등록된 회원입니다.');
+    }
     //Local Storage 에 로그인 정보 저장
     localStorage.setItem('id', inputId);
     localStorage.setItem('pw', inputPw);

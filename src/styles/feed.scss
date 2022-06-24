@@ -68,6 +68,9 @@
     justify-content: space-between;
     .comment {
       display: flex;
+      input {
+        width: 300px;
+      }
       .smile {
         margin-right: 5px;
       }

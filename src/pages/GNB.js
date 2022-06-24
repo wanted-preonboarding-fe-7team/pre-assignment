@@ -8,11 +8,19 @@ import { FaRegPaperPlane } from 'react-icons/fa';
 // import { ImCompass2 } from 'react-icons/im';
 // import { AiOutlineHeart } from 'react-icons/ai';
 import { FiLogOut } from 'react-icons/fi';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 //Feeds의 Image가 로딩된 후 컴포넌트가 로딩(image.onload)
 function GNB() {
   const navigate = useNavigate();
+  const id = localStorage.getItem('id');
+  const pw = localStorage.getItem('pw');
+  //url접근 막기
+  if (id === null || pw === null) {
+    alert('로그인 정보가 없습니다.');
+    navigate('/');
+  }
+  //로그아웃
   function logout() {
     console.log('logout');
     //Local Storage 에 로그인 정보 삭제
@@ -26,11 +34,13 @@ function GNB() {
       <div className="main-top">
         <div className="inner">
           <h1>
-            <img
-              className="logo"
-              alt="instagram"
-              src="instagram-new-logo.png"
-            />
+            <Link to="/">
+              <img
+                className="logo"
+                alt="instagram"
+                src="instagram-new-logo.png"
+              />
+            </Link>
           </h1>
           <div className="search">
             <FiSearch className="search-icon" size={18} color="#aaa" />
@@ -42,7 +52,7 @@ function GNB() {
             {/* <AiOutlinePlusCircle size={20} />
             <ImCompass2 size={20} />
             <AiOutlineHeart size={20} /> */}
-            <FiLogOut size={20} onClick={logout} />
+            <FiLogOut size={20} onClick={logout} className="logout" />
           </div>
         </div>
       </div>
