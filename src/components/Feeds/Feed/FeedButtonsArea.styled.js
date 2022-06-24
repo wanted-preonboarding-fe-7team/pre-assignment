@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { flexCenterStyle } from 'styles/commonStyles';
 
 const Wrapper = styled.div`
   display: flex;

@@ -1,34 +1,13 @@
-import { Icon } from 'components/common';
 import theme from 'styles/theme';
 
-import Avatar from './Avatar';
-import {
-  FeedWrapper,
-  FeedHeader,
-  FeedImageArea,
-  FeedItem,
-  FeedIconItem,
-  UserInfo,
-  UserMail,
-  UserDesc,
-} from './Feed.style';
+import { FeedWrapper, FeedImageArea } from './Feed.style';
 import FeedButtonsArea from './FeedButtonsArea';
+import FeedHeader from './FeedHeader';
 
 const Feed = ({ userId }) => {
   return (
     <FeedWrapper>
-      <FeedHeader>
-        <FeedItem>
-          <Avatar userEmail={userId} />
-          <UserInfo>
-            <UserMail>{userId}</UserMail>
-            <UserDesc>유저 설명</UserDesc>
-          </UserInfo>
-        </FeedItem>
-        <FeedIconItem>
-          <Icon icon="dots" />
-        </FeedIconItem>
-      </FeedHeader>
+      <FeedHeader userId={userId} />
       <FeedImageArea>
         <img
           src="https://source.unsplash.com/random/300x1500"
