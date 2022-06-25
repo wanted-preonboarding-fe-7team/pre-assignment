@@ -7,19 +7,16 @@ import FeedHeader from './FeedItem/Header';
 import LikedArea from './FeedItem/LikedArea';
 import WriteCommentArea from './FeedItem/WriteCommentArea';
 
-const Feed = ({ userId }) => {
+const Feed = ({ data: { imgUrl, writer }, liked: { count }, comments }) => {
   return (
     <FeedWrapper>
-      <FeedHeader userId={userId} />
+      <FeedHeader userId={writer} />
       <FeedImageArea>
-        <img
-          src="https://source.unsplash.com/random/700x1080"
-          width={theme.feed.width}
-        />
+        <img src={imgUrl} width={theme.feed.width} />
       </FeedImageArea>
       <FeedButtonsArea />
-      <LikedArea likeCount={50000} />
-      <CommentsList />
+      <LikedArea likeCount={count} />
+      <CommentsList data={comments} />
       <WriteCommentArea />
     </FeedWrapper>
   );

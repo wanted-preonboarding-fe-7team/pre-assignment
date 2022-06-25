@@ -17,19 +17,10 @@ const FeedInfoArea = styled.div`
   gap: 10px;
 `;
 
-const UserInfo = styled.div`
+const UserInfo = styled.p`
   display: flex;
-  height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
-const UserMail = styled.p`
+  align-items: center;
   font-weight: 700;
-`;
-
-const UserDesc = styled.p`
-  color: ${({ theme: { color } }) => color.gray4};
 `;
 
 const Buttons = styled.div`
@@ -40,11 +31,4 @@ const Buttons = styled.div`
   padding: ${({ theme: { feed } }) => feed.whitespace};
 `;
 
-export {
-  FeedHeaderWrapper,
-  FeedInfoArea,
-  UserInfo,
-  UserMail,
-  UserDesc,
-  Buttons,
-};
+export { FeedHeaderWrapper, FeedInfoArea, UserInfo, Buttons };

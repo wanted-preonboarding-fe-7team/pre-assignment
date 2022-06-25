@@ -1,7 +1,7 @@
 import Div from './Avatar.styled';
 
 const Avatar = ({
-  userEmail,
+  userId,
   imageUrl = 'https://via.placeholder.com/32.jpg',
   size = { width: '32px', height: '32px' },
 }) => {
@@ -11,7 +11,7 @@ const Avatar = ({
         src={imageUrl}
         width="100%"
         height="100%"
-        alt={`${userEmail}의 아바타 `}
+        alt={`${userId}의 아바타 `}
       />
     </Div>
   );
