@@ -4,12 +4,15 @@ const CustomInput = styled.input`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   padding: 8px;
-  border: ${({ borderStyle }) => borderStyle};
-  border-radius: ${({ borderRadius }) => borderRadius};
-  background-color: ${({ theme }) => theme.color.gray1};
+  border-radius: ${({
+    theme: {
+      border: { radius },
+    },
+  }) => radius.input};
+  background-color: ${({ theme: { color } }) => color.gray1};
 
   & ::placeholder {
-    color: ${({ theme }) => theme.color.gray1};
+    color: ${({ theme: { color } }) => color.gray1};
   }
 `;
 

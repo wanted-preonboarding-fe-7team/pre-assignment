@@ -17,10 +17,15 @@ const theme = {
   login: {
     width: '350px',
     height: '380px',
+    loginInput: {
+      width: '100%',
+      height: '36px',
+    },
   },
   border: {
     linear: '1px solid #dbdbdb',
     radius: {
+      input: '6px',
       login: '3px',
       gnb: '8px',
       feed: '8px',

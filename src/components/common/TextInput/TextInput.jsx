@@ -1,45 +1,40 @@
-import { useContext, forwardRef, useState } from 'react';
-
-import { LoginContext } from 'context/context';
-import theme from 'styles/theme';
-import checkValidInput from 'utils/checkValidInput';
+import { forwardRef, useState } from 'react';
 
 import CustomInput from './TextInput.styled';
 
-const borderStyles = {
-  error: `2px solid ${theme.color.red}`,
-};
-
 const TextInput = forwardRef(
   (
-    { placeholder, size, borderStyle, borderRadius, type = 'text', id },
+    {
+      placeholder,
+      size: { width, height },
+      onChange: onChangeHandler,
+      type = 'text',
+      inputValue,
+      className,
+    },
     ref
   ) => {
-    const { isValidInput, setIsValidInput } = useContext(LoginContext);
-
     const [inputText, setInputText] = useState('');
 
-    const onChange = ({ target }) => {
-      const inputValue = target.value;
+    const handleOnChange = ({ target }) => {
+      if (onChangeHandler) {
+        onChangeHandler({ target });
+        return;
+      }
 
+      const inputValue = target.value;
       setInputText(inputValue);
-      setIsValidInput[id](checkValidInput[id](inputValue));
     };
 
     return (
       <CustomInput
         type={type}
-        onChange={onChange}
+        onChange={handleOnChange}
         placeholder={placeholder}
-        width={size.width}
-        height={size.height}
-        borderStyle={
-          (inputText && isValidInput[id]) || !inputText
-            ? borderStyle
-            : borderStyles.error
-        }
-        borderRadius={borderRadius}
-        value={inputText}
+        width={width}
+        height={height}
+        value={inputValue || inputText}
+        className={className}
         ref={ref}
       />
     );

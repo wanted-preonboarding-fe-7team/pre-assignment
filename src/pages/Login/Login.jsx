@@ -2,9 +2,9 @@ import LOCAL_STORAGE_KEY_NAME from 'constants';
 
 import { useRef, useState, useEffect, useContext } from 'react';
 
-import { Logo, TextInput } from 'components/common';
+import LoginInput from 'components/Login/LoginItem/LoginInput';
+import { Logo } from 'components/common';
 import { LoginContext } from 'context/context';
-import theme from 'styles/theme';
 import storageUtils from 'utils/storage';
 
 import { Wrapper, ButtonLink, LoginArea, LoginInputArea } from './Login.style';
@@ -73,23 +73,8 @@ const Login = () => {
         <LoginContext.Provider value={{ isValidInput, setIsValidInput }}>
           <Logo />
           <LoginInputArea>
-            <TextInput
-              placeholder="전화번호, 사용자 이름 또는 이메일"
-              size={{ height: '36px', width: '100%' }}
-              borderStyle={theme.border.linear}
-              borderRadius={theme.border.radius.login}
-              id="email"
-              ref={$inputId}
-            />
-            <TextInput
-              type="password"
-              placeholder="비밀번호"
-              size={{ height: '36px', width: '100%' }}
-              borderStyle={theme.border.linear}
-              borderRadius={theme.border.radius.login}
-              id="password"
-              ref={$inputPw}
-            />
+            <LoginInput id="email" inputRef={$inputId} />
+            <LoginInput id="password" inputRef={$inputPw} />
           </LoginInputArea>
           <ButtonLink
             onClick={handleLoginButtonClick}
