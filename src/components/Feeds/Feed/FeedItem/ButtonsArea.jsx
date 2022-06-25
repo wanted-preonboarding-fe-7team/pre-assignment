@@ -1,6 +1,6 @@
 import { Icon } from 'components/common';
 
-import { Buttons, Wrapper } from './FeedButtonsArea.styled';
+import { Buttons, Wrapper } from './ButtonsArea.styled';
 
 const FeedButtonsArea = () => {
   return (

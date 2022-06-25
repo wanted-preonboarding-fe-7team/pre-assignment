@@ -8,7 +8,7 @@ import {
   UserDesc,
   UserInfo,
   UserMail,
-} from './FeedHeader.styled';
+} from './Header.styled';
 
 const FeedHeader = ({ userId }) => {
   return (
