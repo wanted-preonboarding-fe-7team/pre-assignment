@@ -7,7 +7,7 @@ const CommentWrapper = styled.li`
 `;
 
 const WriterName = styled.span`
-  font-weight: 600;
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.semiBold};
   margin-right: 0.5rem;
 `;
 

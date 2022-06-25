@@ -14,7 +14,7 @@ const Message = styled.span`
 const HomeLink = styled(Link)`
   ${flexCenterStyle};
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: ${({ theme: { fontWeight } }) => fontWeight.bold};
   color: ${({ theme: { color } }) => color.white};
   padding: 1.5rem;
   margin-top: 2rem;
