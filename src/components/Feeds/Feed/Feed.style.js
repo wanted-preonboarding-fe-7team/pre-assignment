@@ -4,7 +4,7 @@ import { flexCenterStyle } from 'styles/commonStyles';
 const FeedWrapper = styled.article`
   border: ${({ theme: { border } }) => border.linear};
   border-radius: ${({ theme: { border } }) => border.radius.feed};
-  padding: ${({ theme: { feed } }) => feed.padding} 0;
+  padding: ${({ theme: { feed } }) => feed.whitespace} 0;
   overflow: hidden;
 `;
 

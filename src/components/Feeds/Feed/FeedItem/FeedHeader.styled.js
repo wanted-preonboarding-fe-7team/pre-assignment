@@ -5,7 +5,8 @@ const FeedHeaderWrapper = styled.div`
   height: 50px;
   display: flex;
   font-size: 14px;
-  padding: ${({ theme: { feed } }) => feed.padding};
+  padding: ${({ theme: { feed } }) => feed.whitespace};
+  margin-bottom: ${({ theme: { feed } }) => feed.whitespace};
   justify-content: space-between;
 `;
 
@@ -36,7 +37,7 @@ const Buttons = styled.div`
   height: 100%;
   align-items: center;
   gap: 10px;
-  padding: ${({ theme: { feed } }) => feed.padding};
+  padding: ${({ theme: { feed } }) => feed.whitespace};
 `;
 
 export {

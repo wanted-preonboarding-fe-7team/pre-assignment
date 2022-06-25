@@ -32,7 +32,7 @@ const theme = {
     width: '470px',
   },
   feed: {
-    padding: '8px',
+    whitespace: '8px',
     width: '470px',
     height: '700px',
   },
