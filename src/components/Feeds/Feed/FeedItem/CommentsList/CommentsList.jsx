@@ -1,7 +1,7 @@
 import isEmpty from 'utils/utils';
 
 import Comment from './Comment';
-import Wrapper from './CommentsArea.styled';
+import Wrapper from './CommentsList.styled';
 
 const MOCK_COMMENTS_DATA = [
   { id: 0, writerId: 'flower', content: '이미지가 너무 좋네요!' },
@@ -9,7 +9,7 @@ const MOCK_COMMENTS_DATA = [
   { id: 2, writerId: 'penguin', content: '펭펭🐧' },
 ];
 
-const CommentsArea = () => {
+const CommentsList = () => {
   return (
     <Wrapper>
       {(!isEmpty(MOCK_COMMENTS_DATA) &&
@@ -20,4 +20,4 @@ const CommentsArea = () => {
   );
 };
 
-export default CommentsArea;
+export default CommentsList;
