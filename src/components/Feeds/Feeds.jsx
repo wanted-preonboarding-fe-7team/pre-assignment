@@ -3,7 +3,7 @@ import LOCAL_STORAGE_KEY_NAME from 'constants';
 import storageUtils from 'utils/storage';
 
 import Feed from './Feed';
-import FeedsWrapper from './Feeds.style';
+import FeedsWrapper from './Feeds.styled';
 
 const { getLocalStorage } = storageUtils;
 

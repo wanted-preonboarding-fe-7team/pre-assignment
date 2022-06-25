@@ -4,7 +4,7 @@ import { LoginContext } from 'context/context';
 import theme from 'styles/theme';
 import checkValidInput from 'utils/checkValidInput';
 
-import CustomInput from './TextInput.style';
+import CustomInput from './TextInput.styled';
 
 const borderStyles = {
   error: `2px solid ${theme.color.red}`,
