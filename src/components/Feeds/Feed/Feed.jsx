@@ -5,6 +5,7 @@ import FeedButtonsArea from './FeedItem/ButtonsArea';
 import CommentsList from './FeedItem/CommentsList';
 import FeedHeader from './FeedItem/Header';
 import LikedArea from './FeedItem/LikedArea';
+import WriteCommentArea from './FeedItem/WriteCommentArea';
 
 const Feed = ({ userId }) => {
   return (
@@ -19,6 +20,7 @@ const Feed = ({ userId }) => {
       <FeedButtonsArea />
       <LikedArea likeCount={50000} />
       <CommentsList />
+      <WriteCommentArea />
     </FeedWrapper>
   );
 };

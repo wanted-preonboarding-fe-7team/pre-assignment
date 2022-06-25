@@ -6,6 +6,7 @@ import { ReactComponent as Heart } from 'assets/heart.svg';
 import { ReactComponent as Home } from 'assets/home.svg';
 import { ReactComponent as Logout } from 'assets/logout.svg';
 import { ReactComponent as Message } from 'assets/message.svg';
+import { ReactComponent as Smile } from 'assets/smile.svg';
 import { ReactComponent as ThreeDots } from 'assets/three-dots.svg';
 import theme from 'styles/theme';
 
@@ -19,6 +20,7 @@ const iconComponents = {
   dots: ThreeDots,
   comment: Comment,
   bookmark: Bookmark,
+  smile: Smile,
 };
 const Icon = ({
   icon,
