@@ -10,6 +10,10 @@ const theme = {
     blue1: '#b2dffc',
     blue2: '#0095f6',
   },
+  fontWeight: {
+    semiBold: 600,
+    bold: 800,
+  },
   login: {
     width: '350px',
     height: '380px',
@@ -35,6 +39,9 @@ const theme = {
     whitespace: '8px',
     width: '470px',
     height: '700px',
+  },
+  comment: {
+    marginBottom: '4px',
   },
 };
 
