@@ -1,74 +1,118 @@
-# :: 원티드 프리온보딩 프론트엔드 코스 사전과제
+# ✅ 원티드 프리온보딩 프론트엔드 코스 사전과제
 
-## Quick Overview
+[원티드 프리온보딩 프론트엔드 코스 사전과제](https://github.com/wanted-pre-onboarding-fe/pre-assignment/blob/main/README.md)를 수행한 repository입니다.
 
-```
-npm install
+## 데모페이지 🖥️
 
-npm start
-```
+🔗 [https://bstagram.netlify.app/](https://bstagram.netlify.app/)
 
-\*\* React를 구동할 수 있는 기본적인 환경이 필요합니다.
+<div style="display:flex">
+  <img src="https://user-images.githubusercontent.com/78826879/175809414-c2c2e457-2913-404c-9b35-4bd5d2018d3e.png" width="49%" alt="미리보기 화면1">
+  <img src="https://user-images.githubusercontent.com/78826879/175809504-3858100f-dbb5-4722-8306-26604188d58e.png" width="49%" alt="미리보기 화면2">
+</div>
 
-## 진행 가이드
 
-- 위의 Repository를 포크(`fork`) 하여 개발 URL 제출해주세요.
-  - [URL 제출 링크](https://forms.gle/LcXnfrgtQp5MRrdU8)
-- fork 레파지토리 명은 `wanted-pre-onboarding-fe`로 생성해 주세요.
-- 과제 수행 개수에 따라 기본적인 평가가 이루어집니다.
-- 코드의 일관성, 가독성, 함수 분리,컴포넌트 설계, 코드 퀄리티 등을 기준으로 세부적인 평가가 이루어집니다.
-- 해당 과제에 대한 해설은 개강 후 진행될 예정입니다.
-- 선발하는 과정에서 최소한의 수준을 평가하기 위한 과제로 아래 Assignment 외 다른 부분을 완벽하게 구현하지 않으셔도 됩니다. (평가에 반영하지 않습니다.)
-- README.md를 꼭 작성해 주세요. 본인에 대한 소개나 과제 풀이에 관한 것 등 자유롭게 작성해주시면 됩니다.
-- 함수형 컴포넌트로 개발해주세요. (React Hooks)
 
-\*문의 사항은 사전 과제 Repository의 Issue로 등록해 주세요.
+최초 로그인시 입력한 아이디(이메일), 비밀번호 정보를 Local Storage에 저장합니다.
+- 다음 로그인부터 이 정보와 일치하는지 여부를 확인하여 일치하는 경우에만 로그인 가능합니다.
 
-# :: 과제 안내
+아이디와 비밀번호는 아래 조건을 지켜서 입력하여야 로그인 가능합니다.
+
+- **조건**
+  - 이메일 : @ , . 포함
+  - 비밀번호 : 대문자, 숫자, 특수문자 포함 8자리 이상
 
 ---
 
 ## Assignment 1 - `Login`
 
-- 로그인 컴포넌트를 개발합니다. (최소화 - `input` 2개, `button` 1개)
-- 약간의 랜더링 최적화를 고려해주세요. (Hint: Ref 사용)
-- 로그인 시(ID, PW 입력 후 버튼 클릭)
-  - Local Storage 에 로그인 정보 저장 (다시 접속했을 경우에 정보가 유지 되어야 합니다.)
-  - 메인 페이지로 이동합니다.(로그인이 완료되면)
-  - 반응형 CSS 적용은 하지 않으셔도 좋습니다. 해당 페이지는 반응형 CSS를 평가하지 않습니다.
+### ✔ 요구사항 
+[Assignment 1 - `Login`](https://github.com/wanted-pre-onboarding-fe/pre-assignment#assignment-1---login)
+
+### 🤓 구현
+
+<img src="https://user-images.githubusercontent.com/78826879/175810129-1133c0c9-9f2d-4749-b1a0-ac0a6626d0e1.gif" width="50%" alt="요구사항1 구현 이미지">
+
+- 로그인 정보를 입력하는 `input`을 `LoginInput`으로 분리하여, `onChange`이벤트가 발생하더라도 input에서만 렌더링이 일어나도록 구현
+  - `TextInput`을 `common`디렉토리 내의 공통 컴포넌트로 만들어, 이를 이용하여 로그인에서 사용할 수 있도록 `LoginInput` 구현 
+- 최초 로그인시에는 저장된 정보가 없고, 로그인에 성공하면(올바른 조건으로 id, pw입력) `Assignment3`의 `저장된 정보`로 저장
+  - **조건**
+    - 이메일 : @ , . 포함
+    - 비밀번호 : 대문자, 숫자, 특수문자 포함 8자리 이상
+- 로그인 완료시 메인페이지로 이동
 
 ## Assignment2 - `GNB`
 
-- 로그인 후 이동하는 메인페이지의 GNB를 구현해주세요.
-- 구현 시 스크롤에 관계 없이 화면 상단에 고정되는 `sticky` GNB 를 구현해주세요.
-- 모바일 사이즈의 경우 가운데 Input 창이 사라져야 하고 양옆으로(space-between) 정렬 되어야 합니다.
-- 가장 오른쪽 아이콘을 Logout으로 변경해주세요.
-- 그 외 기능은 평가하지 않습니다.
-  - (가운데 검색바는 `input` 요소로만 만들어주세요. 기능은 X)
-  - (아이콘은 자유롭게 사용하셔도 괜찮습니다. 아이콘 라이브러리 설치 O)
+### ✔ 요구사항 
+
+[Assignment2 - `GNB`](https://github.com/wanted-pre-onboarding-fe/pre-assignment#assignment2---gnb)
+
+### 🤓 구현
+
+<div style="display:flex">
+  <img src="https://user-images.githubusercontent.com/78826879/175810504-20478924-45ee-42d8-b39c-768a88dcf520.gif" width="49%" alt="요구사항2 구현-GNB 고정">
+  <img src="https://user-images.githubusercontent.com/78826879/175810652-3497fd3b-b702-411a-96fc-8c98eb770ad2.gif" width="49%" alt="요구사항2 구현-반응형">
+</div>
+
+- `position: sticky` 를 이용하여 고정된 GNB 구현
+- GNB 모바일 대응 (미디어 쿼리 사용)
+  - `max-width: 640px` 보다 작아질 경우 검색창 input 숨기기
+    - 기준 640px은 실제 instagram을 토대로 결정
+  - `max-width: 640px` 보다 작아질 경우 버튼 메뉴들 간격 조정
+  - `max-width: 480px` 보다 작아질 경우 기존 GNB의 `padding`을 제거
 
 ## Assignment3 - `Validation`
 
-- 이메일과 비밀번호의 유효성을 확인합니다.
-  - 이메일 조건 - `@` , `.` 포함
-  - 비밀번호 조건 - 대문자, 숫자, 특수문자 포함 8자리 이상
-  - 로그인 시 이메일과 비밀번호가 등록되어 있는 것과 일치 여부 확인
-- Validation 상태를 CSS로 표현해주세요.
-  - Email Input
-    Validation Check를 통해 Email 형식이 아닌 경우 표시를해주세요. (ex. boder가 red색상으로 변경)
-  - Password Input
-    Validation Check를 통해 Password 형식이 아닌 경우 표시를 해주세요. (ex. boder가 red색상으로 변경.)
-  - Login Button
-    Validation Check가 모두 통과된 경우에만 Button 색상을 진하게 변경해주세요. (통과 되지 못한 경우와 구별이 가능해야 합니다.)
-- 유효성 검사 시 아래 두 가지를 적용해서 구현해주세요.
-  - 정규표현식 사용
-  - Validation 함수 분리
+### ✔ 요구사항 
+
+[Assignment3 - `Validation`](https://github.com/wanted-pre-onboarding-fe/pre-assignment#assignment3---validation)
+
+### 🤓 구현
+
+<img src="https://user-images.githubusercontent.com/78826879/175811184-2f0185bc-3e5a-4c85-bc66-e2315e21b1a3.gif" alt="요구사항 3 구현" width="50%">
+
+- 이메일과 비밀번호의 유효성을 정규표현식으로 확인 ([`LoginInput.jsx`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/components/Login/LoginItem/LoginInput.jsx))
+```js
+const patterns = {
+  email:
+    /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
+  password: /^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+};
+```
+- Validation 함수를 분리
+```js
+const checkValidInput = {
+  email(value) {
+    return patterns.email.test(value);
+  },
+  password(value) {
+    return patterns.password.test(value);
+  },
+};
+```
+
+- Validation 상태를 CSS(border 색상 red)로 표시
+  - `isValidId`, `isValidPw`상태를 이용하여 border style 변경
+- 아이디(이메일), 비밀번호 모두 유효성 검사를 통과한 경우에만 로그인 버튼을 활성화
+  - 하나라도 유효하지 않은 경우(공백 포함)에는 `disabled`처리
+```js
+const isButtonActive = isValidId && isValidPw;
+```
 
 ## Assignment4 - `Routing`
 
-- 로그인,로그아웃 시 라우팅 로직을 통해 페이지가 이동 되도록 구현해주세요. (Local Storage)
-- 로그인이 완료되면 라우터에서 Main Page로 이동되어야 합니다. (history push 사용 X)
-- 로그아웃되면 (Local Storage가 삭제되면) Login Page로 이동되어야 합니다.(history push 사용 X)
+### ✔ 요구사항 
+
+[Assignment4 - `Routing`](https://github.com/wanted-pre-onboarding-fe/pre-assignment#assignment4---routing)
+
+### 🤓 구현
+
+<img src="https://user-images.githubusercontent.com/78826879/175811379-fccb5c0e-f0a8-454b-928a-1137a0192fba.gif" width="50%" alt="요구사항4 - 라우팅">
+
+- 로그인, 로그아웃시 화면 전환
+  - 루트(`/`)로 접속, 로그인 여부에 따라 화면 전환(주소 변경x) [`Home.jsx`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/pages/Home/Home.jsx)
+    - `<Link>`혹은 `<Navigate>`는 `history API`를 이용하므로, `isLoggedIn` 상태를 정의하여 사용
+  - 로그아웃시 로그인 화면으로 전환
 
 ## Assignment5 - `Feeds`
 
