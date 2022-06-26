@@ -2,17 +2,10 @@ import { useEffect, useState } from 'react';
 
 import Loading from 'components/Loading';
 import getFeedData from 'service/feedApi';
+import { after } from 'utils/utils';
 
 import Feed from './Feed';
 import FeedsWrapper from './Feeds.styled';
-
-function after(times, func) {
-  return function () {
-    if (--times < 1) {
-      return func.apply(this, arguments);
-    }
-  };
-}
 
 const Feeds = () => {
   const [feedData, setFeedData] = useState(null);

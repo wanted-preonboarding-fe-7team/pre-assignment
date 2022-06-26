@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 import { Icon } from 'components/common';
 import storageUtils from 'utils/storage';
-import isEmpty from 'utils/utils';
+import { isEmpty } from 'utils/utils';
 
 import CommentInput from './CommentInput';
 import {

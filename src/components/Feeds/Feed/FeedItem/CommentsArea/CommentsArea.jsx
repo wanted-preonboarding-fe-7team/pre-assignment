@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import isEmpty from 'utils/utils';
+import { isEmpty } from 'utils/utils';
 
 import Comment from './Comment';
 import { Wrapper, Comments } from './CommentsArea.styled';
