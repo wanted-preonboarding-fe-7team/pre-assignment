@@ -140,7 +140,7 @@ const isButtonActive = isValidId && isValidPw;
 ```
 <img src="https://user-images.githubusercontent.com/78826879/175823676-a8f2031c-1dab-4384-a9a1-03032d532389.gif" width="60%" alt="요구사항3-일치여부확인">
 
-- [저장(등록)된 유저정보(https://github.com/BB-choi/wanted-pre-onboarding-fe#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%A0%95%EB%B3%B4)와 일치하지 않는경우 알림 표시
+- [저장(등록)된 유저정보](https://github.com/BB-choi/wanted-pre-onboarding-fe#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%A0%95%EB%B3%B4)와 일치하지 않는경우 알림 표시
 - 로그아웃하지 않은 경우, localStorage에 저장된 정보로 자동 로그인 처리 
   - `loginData` 상태로 관리([`App.js`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/App.js))
 
@@ -157,7 +157,7 @@ const isButtonActive = isValidId && isValidPw;
 
 - 로그인, 로그아웃시 화면 전환
   - 루트(`/`)로 접속, 로그인 여부에 따라 화면 전환(주소 변경x) [`Home.jsx`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/pages/Home/Home.jsx)
-    - `<Link>`혹은 `<Navigate>`는 `history API`를 이용하므로, `isLoggedIn` 상태를 정의하여 사용
+    - `<Link>`혹은 `<Navigate>`는 `history API`를 이용하므로, `loginData` 상태를 정의하여 사용
   - 로그아웃시 로그인 화면으로 전환
 
 ## Assignment5 - `Feeds`
