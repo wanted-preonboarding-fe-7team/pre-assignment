@@ -15,7 +15,9 @@ npm start
 
 - 함수형 컴포넌트로 개발(React Hooks)
 - 사용한 Hook : uesRef / useState / createContext / useEffect
-- React,scss,react-icons라이브러리 사용
+- ESLint , prettier로 통일되고 깔끔한 코드 사용
+- SCSS사용으로 CSS에서 반복되는 코드 줄임
+- =React-icons라이브러리로 보다 편한 아이콘 사용
 
 ### Login
 - 로그인시에 Main Page로 이동
