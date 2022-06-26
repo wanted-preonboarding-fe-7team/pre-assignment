@@ -143,6 +143,8 @@ const isButtonActive = isValidId && isValidPw;
 
 - localStorage에 저장된 아이디(이메일)과 비밀번호와 하나라도 일치하지 않는경우 알림 표시
 
+- 로그아웃하지 않은 경우, localStorage에 저장된 정보로 자동 로그인 처리 `loginData` 상태로 관리([`App.js`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/App.js))
+
 
 ## Assignment4 - `Routing`
 
