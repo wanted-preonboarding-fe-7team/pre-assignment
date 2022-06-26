@@ -63,4 +63,4 @@ feed컴포넌트 자체를 배열로 불러와 반복 출력 -> feed안에서는
 
 ## 배포된 사이트
 
-[배포된 사이트]([https://bclef25.notion.site/1ed6d5b2192b45eeb4104a67f6a77250](https://preonboarding-course-fe.netlify.app))
+[배포된 사이트] [https://preonboarding-course-fe.netlify.app](https://preonboarding-course-fe.netlify.app)
