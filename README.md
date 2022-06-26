@@ -51,7 +51,7 @@
 
 <div style="display:flex">
   <img src="https://user-images.githubusercontent.com/78826879/175810504-20478924-45ee-42d8-b39c-768a88dcf520.gif" width="49%" alt="요구사항2 구현-GNB 고정">
-  <img src="https://user-images.githubusercontent.com/78826879/175810652-3497fd3b-b702-411a-96fc-8c98eb770ad2.gif" width="49%" alt="요구사항2 구현-반응형">
+  <img src="https://user-images.githubusercontent.com/78826879/175815298-44cf05be-9d19-4a32-b9ff-7bcecd0f6d3a.gif" width="49%" alt="요구사항2 구현-반응형">
 </div>
 
 - `position: sticky` 를 이용하여 고정된 GNB 구현
