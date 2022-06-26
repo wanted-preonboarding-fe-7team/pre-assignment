@@ -86,7 +86,7 @@ export default function Feed() {
               <FiMoreHorizontal cursor="pointer" />
             </FeedTopRight>
           </FeedTop>
-          <Img src="https://source.unsplash.com/random/600x500" />
+          <Img src="https://source.unsplash.com/random/900x500" />
           <Icons>
             <IconsLeft>
               <BiHeart size="30px" cursor="pointer" />
@@ -117,8 +117,8 @@ export default function Feed() {
             </CommentInputLeft>
             <CommentInputRight>게시</CommentInputRight>
           </CommentInput>
-        </FeedPiece> */}
-        {/* <FeedPiece>
+        </FeedPiece>
+        <FeedPiece>
           <FeedTop>
             <FeedTopLeft>
               <BsFillCircleFill size="35px" opacity="20%" />
@@ -128,7 +128,7 @@ export default function Feed() {
               <FiMoreHorizontal cursor="pointer" />
             </FeedTopRight>
           </FeedTop>
-          <Img src="https://source.unsplash.com/random/600x500" />
+          <Img src="https://source.unsplash.com/random/700x1080" />
           <Icons>
             <IconsLeft>
               <BiHeart size="30px" cursor="pointer" />
@@ -167,9 +167,11 @@ export default function Feed() {
 const Body = styled.div`
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
+  flex-direction: column;
+  align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+  overflow: auto;
 `;
 
 const FeedPiece = styled.div`

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import { MdHomeFilled } from 'react-icons/md';
 import { FiSend } from 'react-icons/fi';
@@ -9,6 +10,13 @@ import { ImCompass2 } from 'react-icons/im';
 import { AiOutlineHeart } from 'react-icons/ai';
 
 export default function GNB() {
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate('/');
+    window.scrollTo(0.0);
+  };
+
   return (
     <Body>
       <Bundle>
@@ -23,7 +31,7 @@ export default function GNB() {
           <FiPlusSquare size="25px" cursor="pointer" />
           <ImCompass2 size="25px" cursor="pointer" />
           <AiOutlineHeart size="25px" cursor="pointer" />
-          <GrLogout size="25px" cursor="pointer" />
+          <GrLogout size="25px" cursor="pointer" onClick={() => goToLogin()} />
         </Icons>
       </Bundle>
     </Body>
