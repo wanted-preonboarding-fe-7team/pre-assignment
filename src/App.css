@@ -1,0 +1,124 @@
+body {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    /* margin: 0px; */
+}
+
+/* Login */
+.Login {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login .login-input {
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    width: 350px;
+    height: 396px;;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.Login .login-input .logo{
+    width: 175px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.Login .login-input input {
+    width: 258px;
+    height: 36px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-left: 7px;
+}
+.Login .login-input input::placeholder {
+    font-size: 12px;
+}
+.Login .login-input button {
+    width: 258px;
+    height: 36px;
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.Login .login-input .line {
+    border-bottom: 1px solid #dbdbdb;
+    width: 258px;
+    position: relative;
+    left: 43px;
+    top: 7px;
+}
+.Login .login-input span {
+    background-color: white;
+    width: 70px;
+    color: gray;
+    font-size: 14px;
+    display: inline-block;;
+    position: relative;
+    z-index: 10;
+}
+
+.Login .login-sns {
+    color: #385085;
+    font-weight: bold;
+    font-size: 14px;
+
+}
+.Login .login-sns img{
+    width: 16px;
+    height: 16px;
+    margin-right:8px;
+}
+.Login .login-sns .find-pwd {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.Login .login-signup {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    width: 350px;
+    height: 63px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Login .login-signup span {
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.Login .login-download {
+    font-size: 14px;
+}
+.Login .login-download p{
+    margin: 10px;;
+}
+.Login .login-download button {
+    width: 136px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+}
