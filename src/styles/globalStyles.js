@@ -18,6 +18,10 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
+
+    &:visited, &:active, &:focus {
+      color: inherit;
+    }
   }
 
   button { 

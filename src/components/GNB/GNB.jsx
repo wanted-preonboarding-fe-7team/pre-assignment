@@ -1,4 +1,5 @@
 import { Logo, TextInput } from 'components/common';
+import { Link } from 'react-router-dom';
 import theme from 'styles/theme';
 
 import ButtonArea from './ButtonArea';
@@ -8,7 +9,9 @@ const GNB = () => {
   return (
     <GNBWrapper>
       <GNBItems>
-        <Logo size={2} />
+        <Link to="/">
+          <Logo size={2} />
+        </Link>
         <SearchBar>
           <TextInput
             size={{ height: '40px', width: '100%' }}

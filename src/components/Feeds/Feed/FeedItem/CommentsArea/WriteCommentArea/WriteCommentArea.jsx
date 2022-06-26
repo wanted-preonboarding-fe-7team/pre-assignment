@@ -1,6 +1,6 @@
 import LOCAL_STORAGE_KEY_NAME from 'constants';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import { Icon } from 'components/common';
 import storageUtils from 'utils/storage';
@@ -20,7 +20,7 @@ const { getLocalStorage } = storageUtils;
 const WriteCommentArea = ({ comments, setComments }) => {
   const [inputText, setInputText] = useState('');
 
-  const onSubmitHandler = (e) => {
+  const onSubmitHandler = useCallback((e) => {
     e.preventDefault();
 
     const $commentInput = e.target[COMMENT_INPUT_NAME];
@@ -39,7 +39,7 @@ const WriteCommentArea = ({ comments, setComments }) => {
       ...comments,
       { id: comments.length + 1, writer: userName, content: commentContent },
     ]);
-  };
+  }, []);
 
   useEffect(() => {
     setInputText('');
