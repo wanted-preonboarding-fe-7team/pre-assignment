@@ -1,25 +1,16 @@
-import LOCAL_STORAGE_KEY_NAME from 'constants';
-
 import { useContext } from 'react';
 
 import { Icon } from 'components/common';
 import { LoginContext } from 'context/context';
 import { Link } from 'react-router-dom';
-import storageUtils from 'utils/storage';
 
 import ButtonAreaWrapper from './ButtonArea.styled';
 
-const { removeFromLocalStorage } = storageUtils;
-
-const removeLoginDataFromLocalStorage = () =>
-  removeFromLocalStorage(LOCAL_STORAGE_KEY_NAME);
-
 const ButtonArea = () => {
-  const { setIsLoggedIn } = useContext(LoginContext);
+  const { setLoginData } = useContext(LoginContext);
 
   const handleClickLogout = () => {
-    removeLoginDataFromLocalStorage();
-    setIsLoggedIn(null);
+    setLoginData(null);
   };
 
   return (

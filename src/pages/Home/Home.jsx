@@ -4,9 +4,9 @@ import { LoginContext } from 'context/context';
 import { Login, Main } from 'pages';
 
 const Home = () => {
-  const { isLoggedIn } = useContext(LoginContext);
+  const { loginData } = useContext(LoginContext);
 
-  return (isLoggedIn && <Main />) || <Login />;
+  return (loginData && <Main />) || <Login />;
 };
 
 export default Home;

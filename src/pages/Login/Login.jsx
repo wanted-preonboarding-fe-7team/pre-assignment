@@ -9,12 +9,10 @@ import storageUtils from 'utils/storage';
 
 import { Wrapper, ButtonLink, LoginArea, LoginInputArea } from './Login.style';
 
-const { setLocalStorage, getLocalStorage } = storageUtils;
-
-const saveLoginData = (data) => setLocalStorage(LOCAL_STORAGE_KEY_NAME, data);
+const { getLocalStorage } = storageUtils;
 
 const Login = () => {
-  const { setIsLoggedIn } = useContext(LoginContext);
+  const { setLoginData } = useContext(LoginContext);
   const [isValidId, setIsValidId] = useState(false);
   const [isValidPw, setIsValidPw] = useState(false);
 
@@ -36,12 +34,6 @@ const Login = () => {
       setIsValidPw(boolean);
     },
   };
-
-  const excuteLogin = (loginData) => {
-    saveLoginData(loginData);
-    setIsLoggedIn(loginData);
-  };
-
   const handleLoginButtonClick = () => {
     const currentId = $inputId.current.value;
     const currentPw = $inputPw.current.value;
@@ -50,7 +42,7 @@ const Login = () => {
     const prevLoginData = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
 
     if (!prevLoginData) {
-      excuteLogin(loginData);
+      setLoginData(loginData);
       return;
     }
 
@@ -60,7 +52,7 @@ const Login = () => {
       return;
     }
 
-    excuteLogin(loginData);
+    setLoginData(loginData);
   };
 
   const handleInputEnterKeyUp = ({ key }) => {
