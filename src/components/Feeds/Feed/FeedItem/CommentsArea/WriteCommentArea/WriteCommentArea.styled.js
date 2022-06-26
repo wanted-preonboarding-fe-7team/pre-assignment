@@ -1,5 +1,4 @@
-import { TextInput } from 'components/common';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const WriteCommentForm = styled.form`
   padding-top: ${({
@@ -17,10 +16,6 @@ const WriteCommentForm = styled.form`
   justify-content: space-between;
 `;
 
-const CommentTextInput = styled(TextInput)`
-  background-color: ${({ theme: { color } }) => color.white};
-`;
-
 const CommentSubmitButton = styled.button`
   background-color: ${({ theme: { color } }) => color.white};
   font-size: 1rem;
@@ -28,4 +23,4 @@ const CommentSubmitButton = styled.button`
   color: ${({ theme: { color } }) => color.blue2};
 `;
 
-export { WriteCommentForm, CommentTextInput, CommentSubmitButton };
+export { WriteCommentForm, CommentSubmitButton };
