@@ -11,16 +11,14 @@
   <img src="https://user-images.githubusercontent.com/78826879/175809504-3858100f-dbb5-4722-8306-26604188d58e.png" width="49%" alt="미리보기 화면2">
 </div>
 
+### 로그인 정보
 
+ID : `BB@bb.com`
 
-최초 로그인시 입력한 아이디(이메일), 비밀번호 정보를 Local Storage에 저장합니다.
-- 다음 로그인부터 이 정보와 일치하는지 여부를 확인하여 일치하는 경우에만 로그인 가능합니다.
+PW: `Abcd@1234`
 
-아이디와 비밀번호는 아래 조건을 지켜서 입력하여야 로그인 가능합니다.
+위 정보로만 로그인이 가능합니다.
 
-- **조건**
-  - 이메일 : @ , . 포함
-  - 비밀번호 : 대문자, 숫자, 특수문자 포함 8자리 이상
 
 ## 프로젝트 구조 🗃️
 
@@ -72,14 +70,11 @@ components 디렉토리 내 `index.js`
 
 ### 🤓 구현
 
-<img src="https://user-images.githubusercontent.com/78826879/175810129-1133c0c9-9f2d-4749-b1a0-ac0a6626d0e1.gif" width="50%" alt="요구사항1 구현 이미지">
+<img src="https://user-images.githubusercontent.com/78826879/175823830-4aaef9c9-b2ff-4182-accb-1a681ccc724d.gif" width="50%" alt="요구사항1 구현 이미지">
 
 - 로그인 정보를 입력하는 `input`을 `LoginInput`으로 분리하여, `onChange`이벤트가 발생하더라도 input에서만 렌더링이 일어나도록 구현
   - `TextInput`을 `common`디렉토리 내의 공통 컴포넌트로 만들어, 이를 이용하여 로그인에서 사용할 수 있도록 `LoginInput` 구현 
-- 최초 로그인시에는 저장된 정보가 없고, 로그인에 성공하면(올바른 조건으로 id, pw입력) `Assignment3`의 `저장된 정보`로 저장
-  - **조건**
-    - 이메일 : @ , . 포함
-    - 비밀번호 : 대문자, 숫자, 특수문자 포함 8자리 이상
+- [올바른 정보](https://github.com/BB-choi/wanted-pre-onboarding-fe#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%A0%95%EB%B3%B4)로 로그인할 시에만 로그인 가능 
 - 로그인 완료시 메인페이지로 이동
 
 ## Assignment2 - `GNB`
@@ -92,7 +87,7 @@ components 디렉토리 내 `index.js`
 
 <div style="display:flex">
   <img src="https://user-images.githubusercontent.com/78826879/175810504-20478924-45ee-42d8-b39c-768a88dcf520.gif" width="49%" alt="요구사항2 구현-GNB 고정">
-  <img src="https://user-images.githubusercontent.com/78826879/175815298-44cf05be-9d19-4a32-b9ff-7bcecd0f6d3a.gif" width="49%" alt="요구사항2 구현-반응형">
+  <img src="https://user-images.githubusercontent.com/78826879/175823919-900619b0-93bf-4d3d-950a-a0e8e5fe33d1.gif" width="49%" alt="요구사항2 구현-반응형">
 </div>
 
 - `position: sticky` 를 이용하여 고정된 GNB 구현
@@ -139,11 +134,11 @@ const checkValidInput = {
 ```js
 const isButtonActive = isValidId && isValidPw;
 ```
-<img src="https://user-images.githubusercontent.com/78826879/175814819-65f5e9c1-0426-4022-9689-d78ab78d712a.gif" width="60%" alt="요구사항3-일치여부확인">
+<img src="https://user-images.githubusercontent.com/78826879/175823676-a8f2031c-1dab-4384-a9a1-03032d532389.gif" width="60%" alt="요구사항3-일치여부확인">
 
-- localStorage에 저장된 아이디(이메일)과 비밀번호와 하나라도 일치하지 않는경우 알림 표시
-
-- 로그아웃하지 않은 경우, localStorage에 저장된 정보로 자동 로그인 처리 `loginData` 상태로 관리([`App.js`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/App.js))
+- [저장(등록)된 유저정보(https://github.com/BB-choi/wanted-pre-onboarding-fe#%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%A0%95%EB%B3%B4)와 일치하지 않는경우 알림 표시
+- 로그아웃하지 않은 경우, localStorage에 저장된 정보로 자동 로그인 처리 
+  - `loginData` 상태로 관리([`App.js`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/App.js))
 
 
 ## Assignment4 - `Routing`
@@ -154,7 +149,7 @@ const isButtonActive = isValidId && isValidPw;
 
 ### 🤓 구현
 
-<img src="https://user-images.githubusercontent.com/78826879/175811379-fccb5c0e-f0a8-454b-928a-1137a0192fba.gif" width="50%" alt="요구사항4 - 라우팅">
+<img src="https://user-images.githubusercontent.com/78826879/175823738-c3814126-9e0f-4943-a551-30e1aa395130.gif" width="50%" alt="요구사항4 - 라우팅">
 
 - 로그인, 로그아웃시 화면 전환
   - 루트(`/`)로 접속, 로그인 여부에 따라 화면 전환(주소 변경x) [`Home.jsx`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/pages/Home/Home.jsx)
@@ -173,10 +168,13 @@ const isButtonActive = isValidId && isValidPw;
 
 - `public/data/feedData.json`을 `fetch`해 화면에 렌더링([`Feeds.jsx`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/components/Feeds/Feeds.jsx)) 
 - 이미지 로딩 후 화면 표시(spinner 표시 후 로딩 완료시 Feeds 표시)
+  - [`after`](https://github.com/BB-choi/wanted-pre-onboarding-fe/blob/main/src/utils/utils.js)함수를 이용하여 모든 이미지가 로딩 된 후에, state(`imagesOnLoad`)를 변경
 
-<img src="https://user-images.githubusercontent.com/78826879/175815298-44cf05be-9d19-4a32-b9ff-7bcecd0f6d3a.gif" width="60%" alt="요구사항5-3">
+<img src="https://user-images.githubusercontent.com/78826879/175824088-e868d014-4abf-44a8-9792-6c10c1928955.gif" width="60%" alt="요구사항5-2">
 
 - 댓글 기능
   - 댓글 작성 및 작성 후 Input 초기화
+
+<img src="https://user-images.githubusercontent.com/78826879/175823919-900619b0-93bf-4d3d-950a-a0e8e5fe33d1.gif" width="60%" alt="요구사항5-3">
  
 - 반응형 적용
