@@ -1,15 +1,8 @@
 import styled, { css } from 'styled-components';
 
-const FeedsWrapper = styled.div`
+const FeedsWrapper = styled.main`
   width: ${({ theme: { feeds } }) => feeds.width};
   margin: ${({ theme: { feeds } }) => feeds.margin} auto;
-
-  ${({ imagesOnLoad }) =>
-    !imagesOnLoad &&
-    css`
-      height: 100%;
-      overflow: hidden;
-    `};
 
   > :not(:last-child) {
     margin-bottom: ${({ theme: { feeds } }) => feeds.margin};

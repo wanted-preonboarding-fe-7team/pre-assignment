@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const GNBWrapper = styled.div`
+const GNBWrapper = styled.header`
   height: ${({ theme: { gnb } }) => gnb.height};
   width: 100%;
   position: sticky;

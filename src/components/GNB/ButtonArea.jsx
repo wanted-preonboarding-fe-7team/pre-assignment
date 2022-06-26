@@ -18,7 +18,7 @@ const removeLoginDataFromLocalStorage = removeFromLocalStorage(
 const ButtonArea = () => {
   const { setIsLoggedIn } = useContext(LoginContext);
 
-  const logoutClickHandler = () => {
+  const handleClickLogout = () => {
     removeLoginDataFromLocalStorage();
     setIsLoggedIn(null);
   };
@@ -40,7 +40,7 @@ const ButtonArea = () => {
       <Link to="/">
         <Icon icon="heart" />
       </Link>
-      <Link to="/" onClick={logoutClickHandler} title="로그아웃">
+      <Link to="/" onClick={handleClickLogout} title="로그아웃">
         <Icon icon="logout" />
       </Link>
     </ButtonAreaWrapper>

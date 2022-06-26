@@ -24,7 +24,7 @@ const Feeds = () => {
     fetchFeedData();
   }, []);
   return (
-    <FeedsWrapper imagesOnLoad={imagesOnLoad}>
+    <FeedsWrapper>
       {(feedData && (
         <>
           {!imagesOnLoad && <Loading />}

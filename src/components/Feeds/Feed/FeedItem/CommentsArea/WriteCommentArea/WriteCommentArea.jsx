@@ -20,7 +20,7 @@ const { getLocalStorage } = storageUtils;
 const WriteCommentArea = ({ comments, setComments }) => {
   const [inputText, setInputText] = useState('');
 
-  const onSubmitHandler = useCallback((e) => {
+  const handleOnSubmit = useCallback((e) => {
     e.preventDefault();
 
     const $commentInput = e.target[COMMENT_INPUT_NAME];
@@ -46,7 +46,7 @@ const WriteCommentArea = ({ comments, setComments }) => {
   }, [comments]);
 
   return (
-    <WriteCommentForm onSubmit={onSubmitHandler}>
+    <WriteCommentForm onSubmit={handleOnSubmit}>
       <Icon icon="smile" />
       <CommentInput
         inputText={inputText}

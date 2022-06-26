@@ -12,9 +12,7 @@ const Loading = () => {
     `;
 
     return () => {
-      document.body.style = css`
-        overflow: auto;
-      `;
+      document.body.style = css``;
     };
   }, []);
 

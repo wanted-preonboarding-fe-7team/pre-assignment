@@ -1,13 +1,11 @@
 import { Feeds, GNB } from 'components';
 
-import MainWrapper from './Main.style';
-
 const Main = () => {
   return (
-    <MainWrapper>
+    <div>
       <GNB />
       <Feeds />
-    </MainWrapper>
+    </div>
   );
 };
 

@@ -2,12 +2,24 @@
   "feedItems": [
     {
       "id": 0,
-      "imgUrl": "https://loremflickr.com/600/500",
+      "imgUrl": "https://placeimg.com/600/500/animals",
       "writer": "penguin"
     },
-    { "id": 1, "imgUrl": "https://loremflickr.com/900/500", "writer": "cat" },
-    { "id": 2, "imgUrl": "https://loremflickr.com/700/1080", "writer": "bear" },
-    { "id": 3, "imgUrl": "https://loremflickr.com/400/300", "writer": "dog" }
+    {
+      "id": 1,
+      "imgUrl": "https://placeimg.com/900/500/animals",
+      "writer": "cat"
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://placeimg.com/700/1080/animals",
+      "writer": "bear"
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://placeimg.com/400/300/animals",
+      "writer": "dog"
+    }
   ],
   "liked": [
     { "id": 0, "count": 11 },
