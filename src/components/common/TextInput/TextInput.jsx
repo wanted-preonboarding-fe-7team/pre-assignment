@@ -10,6 +10,7 @@ const TextInput = forwardRef(
       onChange: onChangeHandler,
       type = 'text',
       inputValue,
+      onKeyUp: handleOnKeyUp,
       className,
       name,
     },
@@ -36,6 +37,7 @@ const TextInput = forwardRef(
         height={height}
         value={inputValue || inputText}
         className={className}
+        onKeyUp={handleOnKeyUp}
         name={name}
         ref={ref}
       />

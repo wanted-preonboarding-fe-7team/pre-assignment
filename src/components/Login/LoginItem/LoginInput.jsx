@@ -33,7 +33,7 @@ const checkValidInput = {
   },
 };
 
-const LoginInput = ({ id, inputRef }) => {
+const LoginInput = ({ id, inputRef, onKeyUp: handleOnKeyUp }) => {
   const { isValidInput, setIsValidInput } = useContext(LoginContext);
 
   const [inputText, setInputText] = useState('');
@@ -54,6 +54,7 @@ const LoginInput = ({ id, inputRef }) => {
       borderRadius={loginInputRadius}
       isValidInput={(inputText && isValidInput[id]) || !inputText}
       ref={inputRef}
+      onKeyUp={handleOnKeyUp}
       inputValue={inputText}
     />
   );

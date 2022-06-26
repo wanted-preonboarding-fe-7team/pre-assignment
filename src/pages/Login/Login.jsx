@@ -63,6 +63,14 @@ const Login = () => {
     excuteLogin(loginData);
   };
 
+  const handleInputEnterKeyUp = ({ key }) => {
+    if (key !== 'Enter' || !isButtonActive) {
+      return;
+    }
+
+    handleLoginButtonClick();
+  };
+
   useEffect(() => {
     $inputId.current.focus();
   }, [$inputId]);
@@ -73,8 +81,16 @@ const Login = () => {
         <LoginContext.Provider value={{ isValidInput, setIsValidInput }}>
           <Logo />
           <LoginInputArea>
-            <LoginInput id="email" inputRef={$inputId} />
-            <LoginInput id="password" inputRef={$inputPw} />
+            <LoginInput
+              id="email"
+              inputRef={$inputId}
+              onKeyUp={handleInputEnterKeyUp}
+            />
+            <LoginInput
+              id="password"
+              inputRef={$inputPw}
+              onKeyUp={handleInputEnterKeyUp}
+            />
           </LoginInputArea>
           <ButtonLink
             onClick={handleLoginButtonClick}

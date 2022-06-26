@@ -5,7 +5,7 @@ import { Home, NotFound } from 'pages';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <LoginContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
