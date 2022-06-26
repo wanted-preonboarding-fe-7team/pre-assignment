@@ -30,8 +30,8 @@ const Login = () => {
       </section>
       <section className="login-download">
         <p>앱을 다운로드하세요.</p>
-        <button>App store에서 다운로드 하기</button>
-        <button>다운로드하기 Google Play</button>
+        <img src={process.env.PUBLIC_URL + '/assets/login-apple.png'} />
+        <img src={process.env.PUBLIC_URL + '/assets/login-google.png'} />
       </section>
     </div>
   );
