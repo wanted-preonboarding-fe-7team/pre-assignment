@@ -5,8 +5,8 @@ import GNB from './pages/GNB';
 
 function App() {
   // return <PreAssignmentGuide />;
-  // return <Login></Login>;
-  return <GNB></GNB>;
+  return <Login></Login>;
+  // return <GNB></GNB>;
 }
 
 export default App;
