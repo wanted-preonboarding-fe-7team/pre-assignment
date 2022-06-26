@@ -11,9 +11,8 @@ import ButtonAreaWrapper from './ButtonArea.styled';
 
 const { removeFromLocalStorage } = storageUtils;
 
-const removeLoginDataFromLocalStorage = removeFromLocalStorage(
-  LOCAL_STORAGE_KEY_NAME
-);
+const removeLoginDataFromLocalStorage = () =>
+  removeFromLocalStorage(LOCAL_STORAGE_KEY_NAME);
 
 const ButtonArea = () => {
   const { setIsLoggedIn } = useContext(LoginContext);
