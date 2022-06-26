@@ -63,6 +63,10 @@ PW: `Abcd@1234`
 components 디렉토리 내 `index.js`
 - `import Loading from "components/Loading/Loading`과 같이 가독성을 떨어뜨리는 import문을 개선하기 위해 작성
 
+---
+
+요구사항을 만족시키면서 구현하였고, 아래는 요구사항 링크와 추가 코멘트 및 화면 스크린샷입니다.
+
 ## Assignment 1 - `Login`
 
 ### ✔ 요구사항 
