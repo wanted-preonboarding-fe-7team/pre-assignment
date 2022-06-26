@@ -35,9 +35,13 @@ const WriteCommentArea = ({ comments, setComments }) => {
     const { id } = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
     const [userName] = id.split('@');
 
-    setComments([
-      ...comments,
-      { id: comments.length + 1, writer: userName, content: commentContent },
+    setComments((prevComments) => [
+      ...prevComments,
+      {
+        id: prevComments.length,
+        writer: userName,
+        content: commentContent,
+      },
     ]);
   }, []);
 
