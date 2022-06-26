@@ -10,7 +10,7 @@ const CommentInput = ({ inputText, setInputText, inputName }) => {
 
   return (
     <CommentTextInput
-      size={{ width: theme.comment.inputWidth, height: '100%' }}
+      size={{ width: '100%', height: '100%' }}
       name={inputName}
       inputValue={inputText}
       onChange={handleOnChange}

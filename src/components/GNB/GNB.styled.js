@@ -22,6 +22,10 @@ const GNBItems = styled.div`
   align-items: center;
   margin: 0 auto;
   padding: 0 ${({ theme: { gnb } }) => gnb.padding};
+
+  @media screen and (max-width: 480px) {
+    padding: 0;
+  }
 `;
 
 const SearchBar = styled.div`

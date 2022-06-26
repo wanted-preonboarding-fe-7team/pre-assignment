@@ -47,7 +47,6 @@ const theme = {
   },
   comment: {
     marginBottom: '4px',
-    inputWidth: '380px',
   },
 };
 

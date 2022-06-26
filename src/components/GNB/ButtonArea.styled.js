@@ -7,6 +7,10 @@ const ButtonAreaWrapper = styled.div`
   a {
     display: block;
   }
+
+  @media screen and (max-width: 640px) {
+    gap: 0.7rem;
+  }
 `;
 
 export default ButtonAreaWrapper;

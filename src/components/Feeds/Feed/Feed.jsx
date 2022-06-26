@@ -16,7 +16,7 @@ const Feed = ({
     <FeedWrapper>
       <FeedHeader userId={writer} />
       <FeedImageArea>
-        <img src={imgUrl} width={theme.feed.width} onLoad={handleOnLoad} />
+        <img src={imgUrl} onLoad={handleOnLoad} />
       </FeedImageArea>
       <FeedButtonsArea />
       <LikedArea likeCount={count} />
