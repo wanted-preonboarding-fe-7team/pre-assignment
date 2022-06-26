@@ -11,6 +11,7 @@ const TextInput = forwardRef(
       type = 'text',
       inputValue,
       className,
+      name,
     },
     ref
   ) => {
@@ -35,6 +36,7 @@ const TextInput = forwardRef(
         height={height}
         value={inputValue || inputText}
         className={className}
+        name={name}
         ref={ref}
       />
     );

@@ -2,10 +2,9 @@ import theme from 'styles/theme';
 
 import { FeedWrapper, FeedImageArea } from './Feed.styled';
 import FeedButtonsArea from './FeedItem/ButtonsArea';
-import CommentsList from './FeedItem/CommentsList';
+import CommentsArea from './FeedItem/CommentsArea';
 import FeedHeader from './FeedItem/Header';
 import LikedArea from './FeedItem/LikedArea';
-import WriteCommentArea from './FeedItem/WriteCommentArea';
 
 const Feed = ({ data: { imgUrl, writer }, liked: { count }, comments }) => {
   return (
@@ -16,8 +15,7 @@ const Feed = ({ data: { imgUrl, writer }, liked: { count }, comments }) => {
       </FeedImageArea>
       <FeedButtonsArea />
       <LikedArea likeCount={count} />
-      <CommentsList data={comments} />
-      <WriteCommentArea />
+      <CommentsArea data={comments} />
     </FeedWrapper>
   );
 };

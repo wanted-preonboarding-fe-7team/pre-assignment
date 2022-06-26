@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import getFeedData from 'service/feedApi';
-import storageUtils from 'utils/storage';
+// import storageUtils from 'utils/storage';
 
 import Feed from './Feed';
 import FeedsWrapper from './Feeds.styled';
