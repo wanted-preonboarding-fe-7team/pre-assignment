@@ -1,17 +1,11 @@
-// import LOCAL_STORAGE_KEY_NAME from 'constants';
-
 import { useEffect, useState } from 'react';
 
 import getFeedData from 'service/feedApi';
-// import storageUtils from 'utils/storage';
 
 import Feed from './Feed';
 import FeedsWrapper from './Feeds.styled';
 
-// const { getLocalStorage } = storageUtils;
-
 const Feeds = () => {
-  // const { id } = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
   const [feedData, setFeedData] = useState(null);
 
   const fetchFeedData = async () => {
