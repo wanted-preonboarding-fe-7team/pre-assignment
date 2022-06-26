@@ -18,6 +18,7 @@ npm start
 - ESLint , prettier로 통일되고 깔끔한 코드 사용
 - SCSS사용으로 CSS에서 반복되는 코드 줄임
 - =React-icons라이브러리로 보다 편한 아이콘 사용
+- Netlify를 이용해 사이트 배포
 
 ### Login
 - 로그인시에 Main Page로 이동
@@ -62,4 +63,4 @@ feed컴포넌트 자체를 배열로 불러와 반복 출력 -> feed안에서는
 
 ## 배포된 사이트
 
-[배포된 사이트](https://bclef25.notion.site/1ed6d5b2192b45eeb4104a67f6a77250)
+[배포된 사이트]([https://bclef25.notion.site/1ed6d5b2192b45eeb4104a67f6a77250](https://preonboarding-course-fe.netlify.app))
