@@ -1,15 +1,12 @@
-import LOCAL_STORAGE_KEY_NAME from 'constants';
+import { userData } from 'constants';
 
 import { useRef, useState, useEffect, useContext } from 'react';
 
 import LoginInput from 'components/Login/LoginItem/LoginInput';
 import { Logo } from 'components/common';
 import { LoginContext } from 'context/context';
-import storageUtils from 'utils/storage';
 
 import { Wrapper, ButtonLink, LoginArea, LoginInputArea } from './Login.style';
-
-const { getLocalStorage } = storageUtils;
 
 const Login = () => {
   const { setLoginData } = useContext(LoginContext);
@@ -39,14 +36,7 @@ const Login = () => {
     const currentPw = $inputPw.current.value;
     const loginData = { id: currentId, pw: currentPw };
 
-    const prevLoginData = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
-
-    if (!prevLoginData) {
-      setLoginData(loginData);
-      return;
-    }
-
-    if (JSON.stringify(loginData) !== JSON.stringify(prevLoginData)) {
+    if (JSON.stringify(userData) !== JSON.stringify(loginData)) {
       alert('아이디(이메일)과 비밀번호를 확인해주세요.');
       $inputId.current.focus();
       return;

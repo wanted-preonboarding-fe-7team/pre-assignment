@@ -1,4 +1,4 @@
-import LOCAL_STORAGE_KEY_NAME from 'constants';
+import { LOCAL_STORAGE_KEY_NAME } from 'constants';
 
 import { useState, useEffect, useCallback } from 'react';
 

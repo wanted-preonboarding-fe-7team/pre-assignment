@@ -1,4 +1,4 @@
-import LOCAL_STORAGE_KEY_NAME from 'constants';
+import { LOCAL_STORAGE_KEY_NAME } from 'constants';
 
 import { useState, useEffect } from 'react';
 
@@ -12,15 +12,17 @@ const saveLoginData = (loginData) =>
   setLocalStorage(LOCAL_STORAGE_KEY_NAME, loginData);
 
 function App() {
-  const [loginData, setLoginData] = useState(null);
+  const [loginData, setLoginData] = useState(
+    getLocalStorage(LOCAL_STORAGE_KEY_NAME) || null
+  );
 
-  useEffect(() => {
-    const prevLoginData = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
+  // useEffect(() => {
+  //   const prevLoginData = getLocalStorage(LOCAL_STORAGE_KEY_NAME);
 
-    if (prevLoginData) {
-      setLoginData(prevLoginData);
-    }
-  }, []);
+  //   if (prevLoginData) {
+  //     setLoginData(prevLoginData);
+  //   }
+  // }, []);
 
   useEffect(() => {
     saveLoginData(loginData);

@@ -1,3 +1,8 @@
 const LOCAL_STORAGE_KEY_NAME = 'Bstagram_login';
 
-export default LOCAL_STORAGE_KEY_NAME;
+const userData = {
+  id: 'BB@bb.com',
+  pw: 'Abcd@1234',
+};
+
+export { LOCAL_STORAGE_KEY_NAME, userData };
