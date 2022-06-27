@@ -1,15 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import './App.css';
 
 function App() {
-  const sessionStorage = window.sessionStorage;
-
-  const [state, setState] = useState({
-    id: '',
-    pwd: '',
-  });
-
   const saveInfo = () => {
     sessionStorage.setItem('id', id);
     sessionStorage.setItem('pwd', pwd);
@@ -17,5 +11,4 @@ function App() {
 
   return <Login />;
 }
-
 export default App;

@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const sessionStorage = window.sessionStorage;
+  const localStorage = window.localStorage;
+  const [login, setLogin] = useState(false);
   const [state, setState] = useState({
     id: '',
     pwd: '',
@@ -19,9 +21,9 @@ const Login = () => {
   };
 
   useEffect(() => {
-    sessionStorage.setItem('id', state.id);
-    sessionStorage.setItem('pwd', state.pwd);
-    console.log(sessionStorage);
+    localStorage.setItem('id', state.id);
+    localStorage.setItem('pwd', state.pwd);
+    console.log(localStorage);
   });
 
   return (
