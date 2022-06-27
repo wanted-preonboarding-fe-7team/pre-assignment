@@ -48,16 +48,28 @@ body {
 .Login .login-input input::placeholder {
     font-size: 12px;
 }
+.Login .login-input .input-invalid {
+    border: 1px solid red;
+}
+
 .Login .login-input button {
     width: 258px;
     height: 36px;
-    background-color: #0095f6;
+    /* background-color: #0095f6; */
     color: white;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
+.Login .login-input .btn-activate {
+    background-color: #0095f6;
+}
+.Login .login-input .btn-disabled {
+    background-color: #91d4ff;
+}
+
 .Login .login-input .line {
     border-bottom: 1px solid #dbdbdb;
     width: 258px;
@@ -130,7 +142,7 @@ body {
     padding: 10px 20px 10px 20px;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 
     position:fixed;
@@ -138,7 +150,13 @@ body {
     left: 0;
 }
 
-.Header button {
+.Header .btn-wrap {
+    overflow: auto;
+    /* white-space: nowrap; */
+    /* width: 100%; */
+    min-width: 260px;
+}
+.Header .btn-wrap button {
     margin: 10px;
 }
 
@@ -201,4 +219,9 @@ body {
 }
 .Header .search input::placeholder {
     color: #919191;
+}
+@media (max-width:640px) {
+    .Header .search {
+        display: none;
+    }
 }
