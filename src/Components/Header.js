@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ onClick }) => {
   return (
     <header className="Header">
       <button className="btn-logo"></button>
@@ -14,7 +14,9 @@ const Header = () => {
         <button className="btn-upload"></button>
         <button className="btn-explore"></button>
         <button className="btn-like"></button>
-        <button className="btn-profile"></button>
+        <button className="btn-logout" onClick={onClick}>
+          로그아웃
+        </button>
       </div>
     </header>
   );

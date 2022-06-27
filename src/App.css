@@ -151,10 +151,9 @@ body {
 }
 
 .Header .btn-wrap {
-    overflow: auto;
-    /* white-space: nowrap; */
-    /* width: 100%; */
     min-width: 260px;
+    display: flex;
+    justify-content: center;
 }
 .Header .btn-wrap button {
     margin: 10px;
@@ -164,39 +163,45 @@ body {
 	background: url('../public/assets/backgroundImage.png') no-repeat -94px -72px;
 	width: 103px;
 	height: 29px;
+    cursor: pointer;
 }
 .Header .btn-home {
 	background: url('../public/assets/backgroundImage.png') no-repeat -78px -260px;
 	width: 24px;
 	height: 24px;
+    cursor: pointer;
 }
 .Header .btn-msg {
     background: url('../public/assets/backgroundImage.png') no-repeat -156px -235px;
 	width: 24px;
 	height: 21px;
+    cursor: pointer;
 }
 .Header .btn-upload {
 	background: url('../public/assets/backgroundImage.png') 
     no-repeat -297px -234px;
 	width: 23px;
 	height: 23px;
+    cursor: pointer;
 }
 .Header .btn-explore {
 	background: url('../public/assets/backgroundImage.png') no-repeat -130px -286px;
 	width: 23px;
 	height: 23px;
+    cursor: pointer;
 }
 .Header .btn-like {
 	background: url('../public/assets/backgroundImage.png') no-repeat -52px -261px;
 	width: 24px;
 	height: 22px;
+    cursor: pointer;
 }
-.Header .btn-profile {
-	background: url('../public/assets/backgroundImage.png')no-repeat -272px -208px;
-	width: 22px;
-	height: 24px;
-    border-radius: 50%;
-    background-color: #fafafa;
+.Header .btn-logout {
+    background-color: white;
+    height: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
 }
 
 .Header .search {
@@ -221,6 +226,9 @@ body {
     color: #919191;
 }
 @media (max-width:640px) {
+    .Header {
+        justify-content: space-between;
+    }
     .Header .search {
         display: none;
     }

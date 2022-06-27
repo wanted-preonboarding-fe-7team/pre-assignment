@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -8,10 +8,6 @@ const Login = () => {
   const [validEmail, setValidEmail] = useState(false);
   const [validPwd, setValidPwd] = useState(false);
   const [validBtn, setValidBtn] = useState(false);
-  // const [state, setState] = useState({
-  //   id: '',
-  //   pwd: '',
-  // });
 
   const idRef = useRef();
   const pwdRef = useRef();
@@ -47,7 +43,7 @@ const Login = () => {
       id: idRef.current.value,
       pwd: pwdRef.current.value,
     };
-    if (validEmail && validPwd) {
+    if (validBtn) {
       //localStorage에 아이디와 비밀번호 저장
       localStorage.setItem('id', user.id);
       localStorage.setItem('pwd', user.pwd);
@@ -61,6 +57,7 @@ const Login = () => {
     } else {
       setValidBtn(false);
     }
+    console.log(validBtn);
   });
 
   return (
@@ -89,7 +86,7 @@ const Login = () => {
           />
           <button
             className={validBtn ? 'btn-activate' : 'btn-disabled'}
-            disabled={validBtn}
+            disabled={!validBtn}
             onClick={handleLogin}
           >
             로그인
