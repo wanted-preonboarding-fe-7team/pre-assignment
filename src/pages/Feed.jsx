@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import GNB from './GNB';
 import { BiHeart } from 'react-icons/bi';
@@ -11,159 +11,115 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 import { BsFillCircleFill } from 'react-icons/bs';
 
 export default function Feed() {
-  //   const [picture, setPicture] = useState({
-  //     id: 0,
-  //     img: '',
-  //   });
+  const IDFocus = useRef(0);
+  const CommentFocus = useRef(0);
 
-  //   useEffect(() => {
-  //     fetch('/data/mockdata.json').then((res) =>
-  //       res.json().then((data) => {
-  //         setPicture(data);
-  //       })
-  //     );
-  //   }, []);
+  const [newID, setNewID] = useState('');
+  const [newComment, setNewComment] = useState('');
+  const [picture, setPicture] = useState([
+    {
+      id: '',
+      image: '',
+    },
+  ]);
+
+  const check = (e) => {
+    // console.log('ch');
+    // console.log(IDFocus.current);
+    console.log(e);
+  };
+
+  const writeComment = (e) => {
+    console.log(e.target.value);
+    if (e.key === 'Enter') {
+      // console.log(CommentFocus);
+      // console.log(CommentFocus);
+      // IDFocus.current.focus();
+    }
+  };
+
+  const writeID = (e) => {
+    console.log(e.target.value);
+    if (e.key === 'Enter') {
+      // console.log(CommentFocus);
+      // console.log(CommentFocus.current.picture[0]);
+      // CommentFocus.current.focus();
+    }
+  };
+
+  useEffect(() => {
+    fetch('/data/mockdata.json').then((res) =>
+      res.json().then((data) => {
+        setPicture(data);
+      })
+    );
+  }, []);
 
   return (
     <>
       <GNB />
       <Body>
-        {/* {picture.map((el) => {
-          <FeedPiece>
-            <FeedTop></FeedTop>
-            <Img src={el.image}></Img>
-          </FeedPiece>;
-        })} */}
-        <FeedPiece>
-          <FeedTop>
-            <FeedTopLeft>
-              <BsFillCircleFill size="35px" opacity="20%" />
-              <ProfileID>wanted</ProfileID>
-            </FeedTopLeft>
-            <FeedTopRight>
-              <FiMoreHorizontal cursor="pointer" />
-            </FeedTopRight>
-          </FeedTop>
-          <Img src="https://source.unsplash.com/random/600x500" />
-          <Icons>
-            <IconsLeft>
-              <BiHeart size="30px" cursor="pointer" />
-              <FaRegCommentDots size="30px" cursor="pointer" />
-              <BiPaperPlane size="30px" cursor="pointer" />
-            </IconsLeft>
-            <IconsRight>
-              <GrBookmark size="30px" cursor="pointer" />
-            </IconsRight>
-          </Icons>
-          <Like>좋아요 0개</Like>
-          <CommentGather>
-            <CommentList>
-              <CommentID>bcleft25</CommentID>
-              <CommentContent>안녕하세요?</CommentContent>
-            </CommentList>
-            <CommentList>
-              <CommentID>bcleft25</CommentID>
-              <CommentContent>
-                안녕하세요? 저는 조인호라고 합니다. 만나서 반갑습니다.
-              </CommentContent>
-            </CommentList>
-          </CommentGather>
-          <CommentInput>
-            <CommentInputLeft>
-              <BsEmojiSmile size="25px" />
-              <Comment placeholder="댓글달기..." />
-            </CommentInputLeft>
-            <CommentInputRight>게시</CommentInputRight>
-          </CommentInput>
-        </FeedPiece>
-        {/* <FeedPiece>
-          <FeedTop>
-            <FeedTopLeft>
-              <BsFillCircleFill size="35px" opacity="20%" />
-              <ProfileID>wanted</ProfileID>
-            </FeedTopLeft>
-            <FeedTopRight>
-              <FiMoreHorizontal cursor="pointer" />
-            </FeedTopRight>
-          </FeedTop>
-          <Img src="https://source.unsplash.com/random/900x500" />
-          <Icons>
-            <IconsLeft>
-              <BiHeart size="30px" cursor="pointer" />
-              <FaRegCommentDots size="30px" cursor="pointer" />
-              <BiPaperPlane size="30px" cursor="pointer" />
-            </IconsLeft>
-            <IconsRight>
-              <GrBookmark size="30px" cursor="pointer" />
-            </IconsRight>
-          </Icons>
-          <Like>좋아요 0개</Like>
-          <CommentGather>
-            <CommentList>
-              <CommentID>bcleft25</CommentID>
-              <CommentContent>안녕하세요?</CommentContent>
-            </CommentList>
-            <CommentList>
-              <CommentID>bcleft25</CommentID>
-              <CommentContent>
-                안녕하세요? 저는 조인호라고 합니다. 만나서 반갑습니다.
-              </CommentContent>
-            </CommentList>
-          </CommentGather>
-          <CommentInput>
-            <CommentInputLeft>
-              <BsEmojiSmile size="25px" />
-              <Comment placeholder="댓글달기..." />
-            </CommentInputLeft>
-            <CommentInputRight>게시</CommentInputRight>
-          </CommentInput>
-        </FeedPiece>
-        <FeedPiece>
-          <FeedTop>
-            <FeedTopLeft>
-              <BsFillCircleFill size="35px" opacity="20%" />
-              <ProfileID>wanted</ProfileID>
-            </FeedTopLeft>
-            <FeedTopRight>
-              <FiMoreHorizontal cursor="pointer" />
-            </FeedTopRight>
-          </FeedTop>
-          <Img src="https://source.unsplash.com/random/700x1080" />
-          <Icons>
-            <IconsLeft>
-              <BiHeart size="30px" cursor="pointer" />
-              <FaRegCommentDots size="30px" cursor="pointer" />
-              <BiPaperPlane size="30px" cursor="pointer" />
-            </IconsLeft>
-            <IconsRight>
-              <GrBookmark size="30px" cursor="pointer" />
-            </IconsRight>
-          </Icons>
-          <Like>좋아요 0개</Like>
-          <CommentGather>
-            <CommentList>
-              <CommentID>bcleft25</CommentID>
-              <CommentContent>안녕하세요?</CommentContent>
-            </CommentList>
-            <CommentList>
-              <CommentID>bcleft25</CommentID>
-              <CommentContent>
-                안녕하세요? 저는 조인호라고 합니다. 만나서 반갑습니다.
-              </CommentContent>
-            </CommentList>
-          </CommentGather>
-          <CommentInput>
-            <CommentInputLeft>
-              <BsEmojiSmile size="25px" />
-              <Comment placeholder="댓글달기..." />
-            </CommentInputLeft>
-            <CommentInputRight>게시</CommentInputRight>
-          </CommentInput>
-        </FeedPiece> */}
+        {picture.map((el) => {
+          return (
+            <FeedPiece key={el.id}>
+              <FeedTop>
+                <FeedTopLeft>
+                  <BsFillCircleFill size="35px" opacity="20%" />
+                  <ProfileID>wanted</ProfileID>
+                </FeedTopLeft>
+                <FeedTopRight>
+                  <FiMoreHorizontal cursor="pointer" />
+                </FeedTopRight>
+              </FeedTop>
+              <Img src={el.image} />
+              <Icons>
+                <IconsLeft>
+                  <BiHeart size="30px" cursor="pointer" />
+                  <FaRegCommentDots size="30px" cursor="pointer" />
+                  <BiPaperPlane size="30px" cursor="pointer" />
+                </IconsLeft>
+                <IconsRight>
+                  <GrBookmark size="30px" cursor="pointer" />
+                </IconsRight>
+              </Icons>
+              <Like>좋아요 0개</Like>
+              <CommentGather>
+                <CommentList>
+                  <CommentID>bcleft25</CommentID>
+                  <CommentContent>안녕하세요?</CommentContent>
+                </CommentList>
+                <CommentList>
+                  <CommentID>bcleft25</CommentID>
+                  <CommentContent>
+                    안녕하세요? 저는 조인호라고 합니다. 만나서 반갑습니다.
+                  </CommentContent>
+                </CommentList>
+              </CommentGather>
+              <CommentInput>
+                <CommentInputLeft>
+                  <BsEmojiSmile size="35px" />
+                  <NickName
+                    ref={IDFocus}
+                    placeholder="닉네임"
+                    onKeyUp={writeID}
+                    onClick={check}
+                  />
+                  <Comment
+                    ref={CommentFocus}
+                    placeholder="댓글달기..."
+                    onKeyUp={writeComment}
+                  />
+                </CommentInputLeft>
+                <CommentInputRight>게시</CommentInputRight>
+              </CommentInput>
+            </FeedPiece>
+          );
+        })}
       </Body>
     </>
   );
 }
+
 const Body = styled.div`
   display: flex;
   justify-content: center;
@@ -235,9 +191,11 @@ const CommentList = styled.div`
   display: flex;
   /* justify-content: center; */
 `;
+
 const CommentID = styled.div`
   font-weight: bold;
 `;
+
 const CommentContent = styled.div`
   margin: 0 15px;
 `;
@@ -249,15 +207,26 @@ const CommentInput = styled.div`
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   padding: 10px;
 `;
+
 const CommentInputLeft = styled.div`
+  /* width: 100%; */
   display: flex;
   align-items: center;
 `;
+
+const NickName = styled.input`
+  width: 50px;
+  margin-left: 10px;
+`;
+
 const CommentInputRight = styled.div`
+  white-space: nowrap;
   color: skyblue;
   font-weight: bold;
   cursor: pointer;
+  margin-left: 5px;
 `;
+
 const Comment = styled.input`
-  margin-left: 10px;
+  width: 100%;
 `;
