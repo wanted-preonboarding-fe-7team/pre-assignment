@@ -120,12 +120,85 @@ body {
     margin-left: 5px;
     margin-right: 5px;
 }
-/* .Login .login-download button {
-    width: 136px;
-    height: 40px;
-    border-radius: 5px;
-    background-color: black;
-    color: white;
-    font-weight: bold;
+
+/* Header */
+.Header {
+    background-color: white;
+    width: 100vw;
+    height: 60px;
+    border: 1px solid #dbdbdb;
+    padding: 10px 20px 10px 20px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position:fixed;
+    top: 0;
+    left: 0;
+}
+
+.Header button {
     margin: 10px;
-} */
+}
+
+.Header .btn-logo {
+	background: url('../public/assets/backgroundImage.png') no-repeat -94px -72px;
+	width: 103px;
+	height: 29px;
+}
+.Header .btn-home {
+	background: url('../public/assets/backgroundImage.png') no-repeat -78px -260px;
+	width: 24px;
+	height: 24px;
+}
+.Header .btn-msg {
+    background: url('../public/assets/backgroundImage.png') no-repeat -156px -235px;
+	width: 24px;
+	height: 21px;
+}
+.Header .btn-upload {
+	background: url('../public/assets/backgroundImage.png') 
+    no-repeat -297px -234px;
+	width: 23px;
+	height: 23px;
+}
+.Header .btn-explore {
+	background: url('../public/assets/backgroundImage.png') no-repeat -130px -286px;
+	width: 23px;
+	height: 23px;
+}
+.Header .btn-like {
+	background: url('../public/assets/backgroundImage.png') no-repeat -52px -261px;
+	width: 24px;
+	height: 22px;
+}
+.Header .btn-profile {
+	background: url('../public/assets/backgroundImage.png')no-repeat -272px -208px;
+	width: 22px;
+	height: 24px;
+    border-radius: 50%;
+    background-color: #fafafa;
+}
+
+.Header .search {
+    background-color: #efefef;
+    border-radius: 5px;
+    /* box-sizing: border-box; */
+    width: 300px;
+    height: 36px;
+    padding: 5px 15px 5px 15px;
+
+    display: flex;
+    align-items: center;
+}
+.Header .search img {
+    width: 15px;
+}
+.Header .search input {
+    background-color: #efefef;
+    padding-left: 5px;
+}
+.Header .search input::placeholder {
+    color: #919191;
+}
