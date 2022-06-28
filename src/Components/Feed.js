@@ -31,7 +31,6 @@ const Feed = ({ data }) => {
   const getInputValue = (e) => {
     const inputValue = String(inpRef.current.value);
     setComment(inputValue);
-    console.log(inputValue);
   };
 
   //기존 데이터에 새로운 댓글 추가
@@ -39,11 +38,13 @@ const Feed = ({ data }) => {
     setNewcom([...newcom, { content: comment }]);
     inpRef.current.value = '';
   };
+
   //버튼으로 댓글 게시
   const addComBtn = () => {
     saveInputValue();
   };
-  //엔터로도 댓글 게시하기
+
+  //엔터키로 댓글 게시하기
   const addComEnter = (e) => {
     if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
       saveInputValue();

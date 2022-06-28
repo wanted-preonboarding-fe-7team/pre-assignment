@@ -331,6 +331,7 @@ body {
     font-size: 16px;
     color: #0095f6;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .Feed strong, .bold {
