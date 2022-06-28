@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 import { MdHomeFilled } from 'react-icons/md';
 import { FiSend } from 'react-icons/fi';
@@ -9,6 +10,13 @@ import { ImCompass2 } from 'react-icons/im';
 import { AiOutlineHeart } from 'react-icons/ai';
 
 export default function GNB() {
+  const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate('/');
+    window.scrollTo(0.0);
+  };
+
   return (
     <Body>
       <Bundle>
@@ -23,7 +31,7 @@ export default function GNB() {
           <FiPlusSquare size="25px" cursor="pointer" />
           <ImCompass2 size="25px" cursor="pointer" />
           <AiOutlineHeart size="25px" cursor="pointer" />
-          <GrLogout size="25px" cursor="pointer" />
+          <GrLogout size="25px" cursor="pointer" onClick={() => goToLogin()} />
         </Icons>
       </Bundle>
     </Body>
@@ -33,16 +41,13 @@ export default function GNB() {
 const Body = styled.div`
   display: flex;
   align-items: center;
-  padding: 1000px, 100px;
   height: 10vh;
+  width: 100%;
   min-width: 401px;
   outline: 1px solid black;
 `;
 
 const Bundle = styled.div`
-  @media (max-width: 675px) {
-    margin: 0 2vw;
-  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -51,6 +56,9 @@ const Bundle = styled.div`
 `;
 
 const Instagram = styled.div`
+  @media (max-width: 675px) {
+    font-size: 25px;
+  }
   font-size: 35px;
   font-family: 'Petit Formal Script', cursive;
   font-weight: bold;

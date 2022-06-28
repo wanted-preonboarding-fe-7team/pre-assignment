@@ -4,10 +4,18 @@ import { AiFillFacebook } from 'react-icons/ai';
 import { AiFillApple } from 'react-icons/ai';
 import { FaGooglePlay } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [loginOutLine, setLoginOutLine] = useState('rgba(0,0,0, 0.2)');
   const [passwordOutLine, setPasswordOutLine] = useState('rgba(0,0,0, 0.2)');
+
+  const navigate = useNavigate();
+
+  const goToFeed = () => {
+    navigate('/feed');
+    window.scrollTo(0.0);
+  };
 
   const CheckEmail = (e) => {
     if (e.key === 'Enter') {
@@ -235,9 +243,9 @@ export default function Login() {
           />
           {loginOutLine === 'rgba(0,0,0, 0.2)' &&
           passwordOutLine === 'rgba(0,0,0, 0.2)' ? (
-            <Button2>로그인</Button2>
+            <Button2 onClick={() => goToFeed()}>로그인</Button2>
           ) : (
-            <Button>로그인</Button>
+            <Button onClick={() => goToFeed()}>로그인</Button>
           )}
           <OrBar>
             <Hr />
