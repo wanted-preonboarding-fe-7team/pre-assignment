@@ -245,9 +245,6 @@ body {
 }
 
 .Feed .feed-head {
-    /* display: flex; */
-    /* align-items: center; */
-    /* display: inline-block; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -295,9 +292,9 @@ body {
     margin: 5px;
 }
 
-.Feed .feed-content, .feed-coment {
+/* .Feed .feed-content, .feed-coment {
     font-weight: bold;
-}
+} */
 .Feed .feed-content p, .feed-coment p {
     margin: 0 0 7px 7px;
 }

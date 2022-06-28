@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../Components/Header';
+import Header from './Header';
 import {
   FiHeart,
   FiMessageCircle,
@@ -11,7 +11,7 @@ import {
   FiMoreHorizontal,
 } from 'react-icons/fi';
 
-const Feed = () => {
+const Feed = ({ data }) => {
   const localStorage = window.localStorage;
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ const Feed = () => {
           <FiMoreHorizontal className="btn-opt" />
         </div>
         <div>
-          <img src={process.env.PUBLIC_URL + '/assets/testImg.jpg'}></img>
+          <img src={data.img}></img>
           <div className="icon-wrap">
             <div>
               <FiHeart className="feed-icon" />
@@ -44,14 +44,24 @@ const Feed = () => {
           </div>
         </div>
         <div className="feed-content">
-          <p>좋아요 30개</p>
+          <p>좋아요 {data.like}개</p>
           <p>
-            <strong>chaengss</strong>비가 내려요
+            <strong>chaengss</strong>
+            {data.content}
           </p>
         </div>
         <div className="feed-coment">
           <p>
-            <strong>익명</strong>여기도 비가와요
+            <ul>
+              {data.comments.map((it, idx) => (
+                <li key={idx}>
+                  <p>
+                    <strong>익명</strong>
+                    {it.content}
+                  </p>
+                </li>
+              ))}
+            </ul>
           </p>
         </div>
         <div className="inp-comment">

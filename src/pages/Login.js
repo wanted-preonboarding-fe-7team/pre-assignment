@@ -47,7 +47,7 @@ const Login = () => {
       //localStorage에 아이디와 비밀번호 저장
       localStorage.setItem('id', user.id);
       localStorage.setItem('pwd', user.pwd);
-      navigate('/feed');
+      navigate('/home');
     }
   };
 
