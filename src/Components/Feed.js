@@ -52,6 +52,7 @@ const Feed = ({ data }) => {
     }
   };
 
+  //이미지 로드 상태 변경 함수
   const onLoad = () => {
     setLoad(true);
   };

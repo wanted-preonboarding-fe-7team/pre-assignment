@@ -1,19 +1,30 @@
 import React from 'react';
+import {
+  FiSend,
+  FiHeart,
+  FiHome,
+  FiUpload,
+  FiSearch,
+  FiUsers,
+} from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const Header = ({ onClick }) => {
   return (
     <header className="Header">
-      <button className="btn-logo"></button>
+      <Link to={'/home'}>
+        <button className="btn-logo"></button>
+      </Link>
       <div className="search">
-        <img src={process.env.PUBLIC_URL + '/assets/search.png'}></img>
+        <FiSearch />
         <input placeholder="검색"></input>
       </div>
       <div className="btn-wrap">
-        <button className="btn-home"></button>
-        <button className="btn-msg"></button>
-        <button className="btn-upload"></button>
-        <button className="btn-explore"></button>
-        <button className="btn-like"></button>
+        <FiHome className="btn-icon" />
+        <FiSend className="btn-icon" />
+        <FiUpload className="btn-icon" />
+        <FiUsers className="btn-icon" />
+        <FiHeart className="btn-icon" />
         <button className="btn-logout" onClick={onClick}>
           로그아웃
         </button>
