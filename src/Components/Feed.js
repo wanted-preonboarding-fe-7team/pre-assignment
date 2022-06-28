@@ -32,7 +32,7 @@ const Feed = ({ data }) => {
           </div>
           <FiMoreHorizontal className="btn-opt" />
         </div>
-        <div>
+        <div className="feed-img">
           <img src={data.img}></img>
           <div className="icon-wrap">
             <div>
@@ -44,25 +44,21 @@ const Feed = ({ data }) => {
           </div>
         </div>
         <div className="feed-content">
-          <p>좋아요 {data.like}개</p>
+          <p className="bold">좋아요 {data.like}개</p>
           <p>
             <strong>chaengss</strong>
             {data.content}
           </p>
         </div>
-        <div className="feed-coment">
-          <p>
-            <ul>
-              {data.comments.map((it, idx) => (
-                <li key={idx}>
-                  <p>
-                    <strong>익명</strong>
-                    {it.content}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          </p>
+        <div className="feed-comment">
+          <ul>
+            {data.comments.map((it, idx) => (
+              <li key={idx}>
+                <strong>익명</strong>
+                {it.content}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="inp-comment">
           <div>

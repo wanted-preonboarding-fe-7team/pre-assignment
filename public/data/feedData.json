@@ -1,6 +1,6 @@
 [
   {
-    "img": "https://source.unsplash.com/random/400x400",
+    "img": "https://source.unsplash.com/random/600x500",
     "like": 5,
     "content": "어렵지만 해볼래! 난 할 수 있어.",
     "comments": [
@@ -12,7 +12,7 @@
     ]
   },
   {
-    "img": "https://source.unsplash.com/random/500x600",
+    "img": "https://source.unsplash.com/random/900x500",
     "like": 22,
     "content": "좋은 사람, 좋은 날씨, 좋은 결과",
     "comments": [
@@ -24,7 +24,7 @@
     ]
   },
   {
-    "img": "https://source.unsplash.com/random/600x400",
+    "img": "https://source.unsplash.com/random/700x1080",
     "like": 17,
     "content": "행복한 하루 보내기로 해요.",
     "comments": [
