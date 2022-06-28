@@ -5,11 +5,6 @@ import GNB from './GNB';
 import FeedPiece from './FeedPiece';
 
 export default function Feed() {
-  const IDFocus = useRef(0);
-  const CommentFocus = useRef(0);
-
-  const [newID, setNewID] = useState('');
-  const [newComment, setNewComment] = useState('');
   const [picture, setPicture] = useState([
     {
       id: '',

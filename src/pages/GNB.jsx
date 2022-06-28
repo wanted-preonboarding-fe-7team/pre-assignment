@@ -41,16 +41,13 @@ export default function GNB() {
 const Body = styled.div`
   display: flex;
   align-items: center;
-  padding: 1000px, 100px;
   height: 10vh;
+  width: 100%;
   min-width: 401px;
   outline: 1px solid black;
 `;
 
 const Bundle = styled.div`
-  @media (max-width: 675px) {
-    margin: 0 2vw;
-  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -59,6 +56,9 @@ const Bundle = styled.div`
 `;
 
 const Instagram = styled.div`
+  @media (max-width: 675px) {
+    font-size: 25px;
+  }
   font-size: 35px;
   font-family: 'Petit Formal Script', cursive;
   font-weight: bold;
