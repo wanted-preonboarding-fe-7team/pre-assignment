@@ -10,24 +10,28 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 import { BsFillCircleFill } from 'react-icons/bs';
 
 export default function FeedPiece({ feed }) {
+  // const [newCommentID, setNewCommentID] = useState(0);
   const [newID, setNewID] = useState('');
   const [newComment, setNewComment] = useState('');
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([
+    {
+      ID: newID,
+      Comment: newComment,
+    },
+  ]);
 
   const IDFocus = useRef(0);
   const CommentFocus = useRef(0);
 
   const writeID = (e) => {
-    console.log(e.target.value);
+    setNewID(e.target.value);
     if (e.key === 'Enter') {
-      setNewID(e.target.value);
       CommentFocus.current.focus();
     }
-    console.log('newID는? ', newID);
   };
 
   const writeComment = (e) => {
-    console.log(e.target.value);
+    setNewComment(e.target.value);
     if (e.key === 'Enter') {
       addComment();
       IDFocus.current.focus();
@@ -35,11 +39,15 @@ export default function FeedPiece({ feed }) {
   };
 
   const addComment = (e) => {
-    setComments(...comments, {
-      CommentNewID: newID,
-      CommentNewContent: newComment,
-    });
-    return;
+    console.log(newID);
+    console.log(newComment);
+    setComments([
+      ...comments,
+      {
+        CommentNewID: newID,
+        CommentNewContent: newComment,
+      },
+    ]);
   };
 
   return (
@@ -70,10 +78,10 @@ export default function FeedPiece({ feed }) {
         <CommentList>
           {comments.map((el) => {
             return (
-              <>
+              <Comment key={null}>
                 <CommentID>{el.CommentNewID}</CommentID>
                 <CommentContent>{el.CommentNewContent}</CommentContent>
-              </>
+              </Comment>
             );
           })}
         </CommentList>
@@ -82,13 +90,13 @@ export default function FeedPiece({ feed }) {
         <CommentInputLeft>
           <BsEmojiSmile size="35px" />
           <NickName ref={IDFocus} placeholder="닉네임" onKeyUp={writeID} />
-          <Comment
+          <WriteComment
             ref={CommentFocus}
             placeholder="댓글달기..."
             onKeyUp={writeComment}
           />
         </CommentInputLeft>
-        <CommentInputRight>게시</CommentInputRight>
+        <CommentInputRight onClick={addComment}>게시</CommentInputRight>
       </CommentInput>
     </Body>
   );
@@ -160,17 +168,23 @@ const CommentGather = styled.div`
 `;
 
 const CommentList = styled.div`
-  padding: 0 10px;
   display: flex;
-  /* justify-content: center; */
+  justify-content: start;
+  /* flex-direction: column; */
+  /* outline: 1px solid black; */
+  padding: 0 10px;
 `;
 
+const Comment = styled.div``;
+
 const CommentID = styled.div`
+  /* outline: 1px solid black; */
   font-weight: bold;
 `;
 
 const CommentContent = styled.div`
-  margin: 0 15px;
+  /* outline: 1px solid black; */
+  /* margin: 0 15px; */
 `;
 
 const CommentInput = styled.div`
@@ -201,6 +215,6 @@ const CommentInputRight = styled.div`
   margin-left: 5px;
 `;
 
-const Comment = styled.input`
+const WriteComment = styled.input`
   width: 100%;
 `;
