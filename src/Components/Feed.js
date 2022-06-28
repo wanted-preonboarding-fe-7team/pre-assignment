@@ -1,6 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Header from './Header';
 import {
   FiHeart,
   FiMessageCircle,
@@ -17,16 +15,6 @@ const Feed = ({ data }) => {
   const [load, setLoad] = useState(false);
 
   const inpRef = useRef();
-
-  const localStorage = window.localStorage;
-  const navigate = useNavigate();
-
-  //로그아웃
-  const logout = () => {
-    localStorage.removeItem('id');
-    localStorage.removeItem('pwd');
-    navigate('/', { replace: true });
-  };
 
   //댓글 입력값 받기
   const getInputValue = (e) => {
@@ -59,7 +47,6 @@ const Feed = ({ data }) => {
 
   return (
     <>
-      <Header onClick={logout} />
       <section className={['Feed', load ? 'Feed-on' : ''].join(' ')}>
         {load && (
           <div className="feed-head">

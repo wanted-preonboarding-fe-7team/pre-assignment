@@ -136,10 +136,9 @@ body {
 /* Header */
 .Header {
     background-color: white;
-    width: 100%;
+    width: 100vw;
     height: 60px;
     border: 1px solid #dbdbdb;
-    padding: 10px 20px 10px 20px;
 
     display: flex;
     justify-content: space-around;
@@ -158,7 +157,7 @@ body {
 }
 
 .Header .btn-wrap {
-    min-width: 260px;
+    min-width: 200px;
     display: flex;
     justify-content: center;
 }
@@ -197,17 +196,10 @@ body {
 .Header .search input::placeholder {
     color: #919191;
 }
-@media (max-width:640px) {
-    .Header {
-        justify-content: space-between;
-    }
-    .Header .search {
-        display: none;
-    }
-}
 
 /* Feed */
 .Feed-on {
+    box-sizing: border-box;
     background-color: white;
     position: relative;
     top: 60px;
@@ -220,8 +212,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 600px;
-    height: 60px;;
+    width: 100%;
+    height: 60px;
 }
 
 .Feed .feed-head .feed-profile {
@@ -249,7 +241,7 @@ body {
 }
 
 .Feed .feed-img img {
-    width: 600px;
+    width: 100%;
 }
 
 .Feed .icon-wrap {
@@ -276,7 +268,7 @@ body {
 }
 
 .Feed .inp-comment {
-    width: 600px;
+    width: 100%;
     height: 63px;
     display: flex;
     align-items: center;
@@ -309,4 +301,25 @@ body {
 .Feed strong, .bold {
     font-weight: bold;
     margin-right: 10px;
+}
+
+/* input창 사라짐 */
+@media screen and (max-width:639px) {
+    .Header {
+        justify-content: space-between;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .Header .search {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width:479px) {
+    .Feed-on {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100vw;
+    }
 }

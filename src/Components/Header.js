@@ -22,7 +22,6 @@ const Header = ({ onClick }) => {
       <div className="btn-wrap">
         <FiHome className="btn-icon" />
         <FiSend className="btn-icon" />
-        <FiUpload className="btn-icon" />
         <FiUsers className="btn-icon" />
         <FiHeart className="btn-icon" />
         <button className="btn-logout" onClick={onClick}>
