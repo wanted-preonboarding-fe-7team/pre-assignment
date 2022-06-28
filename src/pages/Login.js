@@ -1,5 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+//임시 유저 정보
+const userInfo = {
+  id: 'arong@dog.com',
+  pwd: 'Arong1234!',
+};
 
 const Login = () => {
   const navigate = useNavigate();
@@ -44,20 +50,26 @@ const Login = () => {
       pwd: pwdRef.current.value,
     };
     if (validBtn) {
-      //localStorage에 아이디와 비밀번호 저장
-      localStorage.setItem('id', user.id);
-      localStorage.setItem('pwd', user.pwd);
-      navigate('/home');
+      if (user.id === userInfo.id && user.pwd === userInfo.pwd) {
+        //localStorage에 아이디와 비밀번호 저장
+        localStorage.setItem('id', user.id);
+        localStorage.setItem('pwd', user.pwd);
+        navigate('/home');
+      } else {
+        alert('이메일 또는 비밀번호가 틀립니다.');
+        idRef.current.value = '';
+        pwdRef.current.value = '';
+      }
     }
   };
 
+  //버튼 활성화
   useEffect(() => {
     if (validEmail && validPwd) {
       setValidBtn(true);
     } else {
       setValidBtn(false);
     }
-    console.log(validBtn);
   });
 
   return (
