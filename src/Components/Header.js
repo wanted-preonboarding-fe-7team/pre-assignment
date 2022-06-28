@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-  FiSend,
-  FiHeart,
-  FiHome,
-  FiUpload,
-  FiSearch,
-  FiUsers,
-} from 'react-icons/fi';
+import { FiSend, FiHeart, FiHome, FiSearch, FiUsers } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 const Header = ({ onClick }) => {
   return (
     <header className="Header">
       <Link to={'/home'}>
-        <button className="btn-logo"></button>
+        <button className="btn-logo">
+          <img src={process.env.PUBLIC_URL + '/assets/logo.png'} />
+        </button>
       </Link>
       <div className="search">
         <FiSearch />

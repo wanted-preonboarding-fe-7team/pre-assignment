@@ -150,7 +150,9 @@ body {
 }
 
 .Header .btn-logo {
-    background: url('../public/assets/backgroundImage.png') no-repeat -94px -72px;
+    background-color: white;
+}
+.Header .btn-logo img {
 	width: 103px;
 	height: 29px;
     cursor: pointer;
