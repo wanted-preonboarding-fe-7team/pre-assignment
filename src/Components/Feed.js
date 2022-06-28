@@ -16,15 +16,10 @@ const Feed = ({ data }) => {
 
   const inpRef = useRef();
 
-  //댓글 입력값 받기
-  const getInputValue = (e) => {
-    const inputValue = String(inpRef.current.value);
-    setComment(inputValue);
-  };
-
   //기존 데이터에 새로운 댓글 추가
   const saveInputValue = () => {
-    setNewcom([...newcom, { content: comment }]);
+    const inputValue = inpRef.current.value;
+    setNewcom([...newcom, { content: inputValue }]);
     inpRef.current.value = '';
   };
 
@@ -93,7 +88,7 @@ const Feed = ({ data }) => {
                 <input
                   placeholder="댓글 달기..."
                   ref={inpRef}
-                  onChange={getInputValue}
+                  // onChange={getInputValue}
                   onKeyDown={addComEnter}
                 />
               </div>
