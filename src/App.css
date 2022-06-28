@@ -233,3 +233,103 @@ body {
         display: none;
     }
 }
+
+/* Feed */
+.Feed {
+    background-color: white;
+    position: relative;
+    top: 60px;
+    margin: 30px;
+    width: 600px;
+    border: 1px solid #dbdbdb;
+}
+
+.Feed .feed-head {
+    /* display: flex; */
+    /* align-items: center; */
+    /* display: inline-block; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 600px;
+    height: 60px;;
+}
+
+.Feed .feed-head .feed-profile {
+    display: flex;
+    align-items: center;
+}
+.Feed .feed-head .img-usr {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #dbdbdb;
+    margin: 15px;
+}
+.Feed .feed-head p {
+    font-weight: bold;
+}
+.Feed .feed-head button {
+    background-color: white;
+    width: 24px;
+}
+.Feed .feed-head .btn-opt {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.Feed img {
+    max-width: 600px;
+}
+
+.Feed .icon-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.Feed .feed-icon {
+    width: 26px;
+    height: 26px;
+    margin: 5px;
+}
+
+.Feed .feed-content, .feed-coment {
+    font-weight: bold;
+}
+.Feed .feed-content p, .feed-coment p {
+    margin: 0 0 7px 7px;
+}
+
+.Feed .inp-comment {
+    width: 600px;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #dbdbdb;
+
+}
+
+.Feed .inp-comment div {
+    display: flex;
+    align-items: center;
+}
+.Feed .inp-comment .inp-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+.Feed .inp-comment input {
+    margin-left: 5px;
+}
+.Feed .inp-comment input::placeholder {
+    font-size: 16px;
+}
+.Feed .inp-comment button {
+    background-color: white;
+    font-size: 16px;
+    color: #0095f6;
+    margin-right: 10px;
+}
