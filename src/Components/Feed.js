@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import {
@@ -12,13 +12,42 @@ import {
 } from 'react-icons/fi';
 
 const Feed = ({ data }) => {
+  const [comment, setComment] = useState();
+  const [newcom, setNewcom] = useState(data.comments);
+
+  const inpRef = useRef();
+
   const localStorage = window.localStorage;
   const navigate = useNavigate();
 
+  //로그아웃
   const logout = () => {
     localStorage.removeItem('id');
     localStorage.removeItem('pwd');
     navigate('/', { replace: true });
+  };
+
+  //댓글 입력값 받기
+  const getInputValue = (e) => {
+    const inputValue = String(inpRef.current.value);
+    setComment(inputValue);
+    console.log(inputValue);
+  };
+
+  //기존 데이터에 새로운 댓글 추가
+  const saveInputValue = () => {
+    setNewcom([...newcom, { content: comment }]);
+    inpRef.current.value = '';
+  };
+  //버튼으로 댓글 게시
+  const addComBtn = () => {
+    saveInputValue();
+  };
+  //엔터로도 댓글 게시하기
+  const addComEnter = (e) => {
+    if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
+      saveInputValue();
+    }
   };
 
   return (
@@ -52,7 +81,7 @@ const Feed = ({ data }) => {
         </div>
         <div className="feed-comment">
           <ul>
-            {data.comments.map((it, idx) => (
+            {newcom.map((it, idx) => (
               <li key={idx}>
                 <strong>익명</strong>
                 {it.content}
@@ -63,9 +92,14 @@ const Feed = ({ data }) => {
         <div className="inp-comment">
           <div>
             <FiSmile className="inp-icon" />
-            <input placeholder="댓글 달기..." />
+            <input
+              placeholder="댓글 달기..."
+              ref={inpRef}
+              onChange={getInputValue}
+              onKeyDown={addComEnter}
+            />
           </div>
-          <button>게시</button>
+          <button onClick={addComBtn}>게시</button>
         </div>
       </section>
     </div>
