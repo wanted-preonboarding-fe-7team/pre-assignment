@@ -14,6 +14,7 @@ export default function GNB() {
 
   const goToLogin = () => {
     navigate('/');
+    localStorage.clear();
     window.scrollTo(0.0);
   };
 

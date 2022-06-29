@@ -17,6 +17,8 @@ export default function Login() {
   const navigate = useNavigate();
 
   const goToFeed = () => {
+    localStorage.setItem('id', id);
+    localStorage.setItem('password', password);
     navigate('/feed');
     window.scrollTo(0.0);
   };
@@ -55,15 +57,10 @@ export default function Login() {
       setPasswordOutLine('red');
     }
 
-    // if (e.key === 'Enter') {
-    //   const PW = e.target.value;
-    //   console.log(PW);
-    //   if (ValidationPassword(PW)) {
-    //     setPasswordOutLine('rgba(0,0,0, 0.2)');
-    //   } else if (!ValidationPassword(PW)) {
-    //     setPasswordOutLine('red');
-    //   }
-    // }
+    if (e.key === 'Enter') {
+      localStorage.setItem('id', id);
+      localStorage.setItem('password', password);
+    }
   };
 
   const ValidationEmail = (e) => {
@@ -99,7 +96,7 @@ export default function Login() {
           {loginActive === true ? (
             <Button2 onClick={() => goToFeed()}>로그인</Button2>
           ) : (
-            <Button onClick={() => goToFeed()}>로그인</Button>
+            <Button>로그인</Button>
           )}
           <OrBar>
             <Hr />
@@ -107,7 +104,7 @@ export default function Login() {
             <Hr />
           </OrBar>
           <Facebook>
-            <AiFillFacebook onKeyUp={ButtonActive} size="20px" />
+            <AiFillFacebook size="20px" />
             &nbsp;Facebook으로 로그인
           </Facebook>
           <ForgotPassword>비밀번호를 잊으셨나요?</ForgotPassword>
