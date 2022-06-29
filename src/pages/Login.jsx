@@ -47,8 +47,14 @@ export default function Login() {
 
   const CheckPassword = (e) => {
     const InputValue = e.target.value;
-    console.log(InputValue);
     setPassword(InputValue);
+
+    if (ValidationPassword(InputValue)) {
+      setPasswordOutLine('rgba(0,0,0,0.2)');
+    } else if (!ValidationPassword(InputValue)) {
+      setPasswordOutLine('red');
+    }
+
     // if (e.key === 'Enter') {
     //   const PW = e.target.value;
     //   console.log(PW);
@@ -65,7 +71,7 @@ export default function Login() {
   };
 
   const ValidationPassword = (e) => {
-    return /(?=.*[a-zA-ZS])(?=.*?[#?!@$%^&*-]).{8,}/.test(e);
+    return /(?=.*[a-zA-ZS])(?=.*?[#?!@$%^&*-]).{7,}/.test(e);
   };
 
   return (
@@ -78,7 +84,7 @@ export default function Login() {
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
             autoFocus
-            // onChange={ValidationEmail}
+            onChange={ButtonActive}
             outLine={`${idOutLine} 1px solid`}
             onKeyUp={CheckEmail}
           />
@@ -87,7 +93,7 @@ export default function Login() {
             type="password"
             placeholder="비밀번호"
             outLine={`${passwordOutLine} 1px solid`}
-            // onChange={ValidationPassword}
+            onChange={ButtonActive}
             onKeyUp={CheckPassword}
           />
           {loginActive === true ? (
