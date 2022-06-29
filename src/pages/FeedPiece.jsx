@@ -10,7 +10,6 @@ import { FiMoreHorizontal } from 'react-icons/fi';
 import { BsFillCircleFill } from 'react-icons/bs';
 
 export default function FeedPiece({ feed }) {
-  // const [newCommentID, setNewCommentID] = useState(0);
   const [newID, setNewID] = useState('');
   const [newComment, setNewComment] = useState('');
   const [comments, setComments] = useState([
@@ -35,7 +34,6 @@ export default function FeedPiece({ feed }) {
   const writeComment = (e) => {
     setNewComment(e.target.value);
     if (e.target.value === '') {
-      // IDFocus.current.focus();
       return; // 내용 입력하지 않으면 댓글이 달리지 않게 막음
     } else if (e.key === 'Enter' && newID.length != 0) {
       // newID 길이를 확인함으로써 닉네임을 입력하지 않으면 댓글이 달리지 않게 막음
@@ -55,6 +53,7 @@ export default function FeedPiece({ feed }) {
     ]);
     setNewID('');
     setNewComment('');
+    // setNewCommentID(newCommentID + 1);
     IDFocus.current.focus();
   };
 
@@ -84,9 +83,9 @@ export default function FeedPiece({ feed }) {
         <Like>좋아요 0개</Like>
         <CommentGather>
           <CommentList>
-            {comments.map((el) => {
+            {comments.map((el, index) => {
               return (
-                <Comment key={null}>
+                <Comment key={index}>
                   <CommentID>{el.CommentNewID}</CommentID>
                   <CommentContent>{el.CommentNewContent}</CommentContent>
                 </Comment>
