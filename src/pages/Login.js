@@ -86,7 +86,6 @@ const Login = () => {
             name="id"
             ref={idRef}
             onBlur={checkEmail}
-            // onChange={checkEmail}
           />
           <input
             className={validPwd ? 'input-valid' : 'input-invalid'}
@@ -94,7 +93,6 @@ const Login = () => {
             name="pwd"
             ref={pwdRef}
             onBlur={checkPwd}
-            // onChange={checkPwd}
           />
           <button
             className={validBtn ? 'btn-activate' : 'btn-disabled'}

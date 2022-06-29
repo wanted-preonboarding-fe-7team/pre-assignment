@@ -10,7 +10,6 @@ import {
 } from 'react-icons/fi';
 
 const Feed = ({ data }) => {
-  const [comment, setComment] = useState();
   const [newcom, setNewcom] = useState(data.comments);
   const [load, setLoad] = useState(false);
 
