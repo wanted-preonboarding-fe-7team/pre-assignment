@@ -21,23 +21,40 @@ export default function Feed() {
   }, []);
 
   return (
-    <>
+    <Test>
       <GNB />
       <Body>
         {picture.map((el) => {
           return <FeedPiece key={el.id} feed={el} />;
         })}
       </Body>
-    </>
+    </Test>
   );
 }
+const Test = styled.div`
+  width: 100vw;
+`;
 
 const Body = styled.div`
+  @media (max-width: 380px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+  }
+  @media (max-width: 675px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+  }
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height: fit-content;
-  overflow: auto;
+  /* overflow: auto; */
 `;

@@ -112,12 +112,7 @@ export default function FeedPiece({ feed }) {
 
 const Body = styled.div`
   @media (max-width: 380px) {
-    width: 300px;
-    height: fit-content;
-  }
-  @media (max-width: 675px) {
-    width: 370px;
-    height: fit-content;
+    /* width: 300px; */
   }
   display: flex;
   justify-content: center;

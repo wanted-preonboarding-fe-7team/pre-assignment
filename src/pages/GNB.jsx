@@ -44,8 +44,9 @@ const Body = styled.div`
   align-items: center;
   height: 10vh;
   width: 100%;
-  min-width: 401px;
-  outline: 1px solid black;
+  /* min-width: 401px; */
+  /* outline: 1px solid black; */
+  border-bottom: 1px solid black;
 `;
 
 const Bundle = styled.div`
@@ -73,13 +74,14 @@ const Input = styled.input`
 
 const Icons = styled.div`
   @media (max-width: 500px) {
-    font-size: 10px;
+    /* font-size: 10px; */
+    display: none;
   }
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 180px;
+  /* min-width: 180px; */
   width: 15vw;
 `;
 
