@@ -1,0 +1,32 @@
+{
+  "feeds": {
+    "1": {
+      "avatar": "../images/doji.png",
+      "src": "https://source.unsplash.com/random/600x500",
+      "nickname": "끼야아아알",
+      "comments": [
+        { "nickname": "괴물123", "content": "안녕하세요 재밌는 코딩" },
+        { "nickname": "괴물123", "content": "코딩 너무 재밌어요" }
+      ],
+      "like": 2
+    },
+    "2": {
+      "avatar": "../images/ttt.png",
+      "src": "https://source.unsplash.com/random/900x500",
+      "nickname": "괴물123",
+      "comments": [
+        { "nickname": "끼야아아알", "content": "안녕하세요 재밌는 코딩" },
+        { "nickname": "끼야아아알", "content": "예쁜 사진" },
+        { "nickname": "cndusqls98", "content": "helloworld" }
+      ],
+      "like": 0
+    },
+    "3": {
+      "avatar": "../images/kakaoTalk.jpeg",
+      "src": "https://source.unsplash.com/random/700x1080",
+      "nickname": "cndusqls98",
+      "comments": [],
+      "like": 4
+    }
+  }
+}
