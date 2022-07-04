@@ -1,0 +1,66 @@
+{
+  "feedItems": [
+    {
+      "id": 0,
+      "imgUrl": "https://placeimg.com/600/500/animals",
+      "writer": "penguin"
+    },
+    {
+      "id": 1,
+      "imgUrl": "https://placeimg.com/900/500/animals",
+      "writer": "cat"
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://placeimg.com/700/1080/animals",
+      "writer": "bear"
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://placeimg.com/400/300/animals",
+      "writer": "dog"
+    }
+  ],
+  "liked": [
+    { "id": 0, "count": 11 },
+    { "id": 1, "count": 3000 },
+    { "id": 2, "count": 300 },
+    { "id": 3, "count": 10000 }
+  ],
+  "comments": [
+    {
+      "id": 0,
+      "comments": [
+        {
+          "id": 0,
+          "writer": "penguin",
+          "content": "사진 잘 보고 갑니다 🐧🐧"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "comments": [
+        { "id": 0, "writer": "penguin", "content": "좋은 사진이네요 🐧!" },
+        { "id": 1, "writer": "rabbit", "content": "와🐇 너무 좋아요!" },
+        { "id": 2, "writer": "duck", "content": "좋아요 🦆 누르고 갑니다 🦆🦆" }
+      ]
+    },
+    {
+      "id": 2,
+      "comments": [
+        {
+          "id": 0,
+          "writer": "bear",
+          "content": "사진이 너무 마음에 들어요! 🧸"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "comments": [
+        { "id": 0, "writer": "cat", "content": "인상깊은 사진입니다🐈!" }
+      ]
+    }
+  ]
+}
