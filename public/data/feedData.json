@@ -1,0 +1,39 @@
+[
+  {
+    "img": "https://source.unsplash.com/random/600x500",
+    "like": 5,
+    "content": "어렵지만 해볼래! 난 할 수 있어.",
+    "comments": [
+      {
+        "content": "파이팅! 너라면 잘 해낼거야."
+      }, {
+        "content" : "우리 모두 힘내자."
+      }
+    ]
+  },
+  {
+    "img": "https://source.unsplash.com/random/900x500",
+    "like": 22,
+    "content": "좋은 사람, 좋은 날씨, 좋은 결과",
+    "comments": [
+      {
+        "content": "네가 있어 나도 좋아 :)"
+      }, {
+        "content" : "오늘 저녁 맥주 한 잔 어때?"
+      }
+    ]
+  },
+  {
+    "img": "https://source.unsplash.com/random/700x1080",
+    "like": 17,
+    "content": "행복한 하루 보내기로 해요.",
+    "comments": [
+      {
+        "content": "Happy Day~"
+      }, {
+        "content" : "쌉쌀고소한 라떼가 나의 행복"
+      }
+    ]
+  }
+  
+]

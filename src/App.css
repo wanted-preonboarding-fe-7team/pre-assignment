@@ -1,0 +1,327 @@
+body {
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    /* margin: 0px; */
+}
+
+/* Login */
+.Login {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login .login-input {
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    width: 350px;
+    height: 396px;;
+    margin-bottom: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+.Login .login-input .logo{
+    width: 175px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.Login .login-input input {
+    width: 258px;
+    height: 36px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-left: 7px;
+}
+.Login .login-input input::placeholder {
+    font-size: 12px;
+}
+.Login .login-input .input-invalid {
+    border: 1px solid red;
+}
+
+.Login .login-input button {
+    width: 258px;
+    height: 36px;
+    /* background-color: #0095f6; */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.Login .login-input .btn-activate {
+    background-color: #0095f6;
+}
+.Login .login-input .btn-disabled {
+    background-color: #91d4ff;
+}
+
+.Login .login-input .line {
+    border-bottom: 1px solid #dbdbdb;
+    width: 258px;
+    position: relative;
+    left: 43px;
+    top: 7px;
+}
+.Login .login-input span {
+    background-color: white;
+    width: 70px;
+    color: gray;
+    font-size: 14px;
+    display: inline-block;;
+    position: relative;
+    z-index: 10;
+}
+
+.Login .login-sns {
+    color: #385085;
+    font-weight: bold;
+    font-size: 14px;
+
+}
+.Login .login-sns img{
+    width: 16px;
+    height: 16px;
+    margin-right:8px;
+}
+.Login .login-sns .find-pwd {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.Login .login-signup {
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    width: 350px;
+    height: 63px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Login .login-signup span {
+    color: #0095f6;
+    font-weight: bold;
+}
+
+.Login .login-download {
+    font-size: 14px;
+}
+.Login .login-download p{
+    margin: 10px;;
+}
+.Login .login-download img {
+    width: 136px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Header */
+.Header {
+    background-color: white;
+    width: 100vw;
+    height: 60px;
+    border: 1px solid #dbdbdb;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position:fixed;
+    top: 0;
+    left: 0;
+}
+
+.Header .btn-logo {
+    background-color: white;
+}
+.Header .btn-logo img {
+	width: 103px;
+	height: 29px;
+    cursor: pointer;
+}
+
+.Header .btn-wrap {
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.Header .btn-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.Header .btn-logout {
+    background-color: white;
+    height: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+.Header .search {
+    background-color: #efefef;
+    border-radius: 5px;
+    /* box-sizing: border-box; */
+    width: 300px;
+    height: 36px;
+    padding: 5px 15px 5px 15px;
+
+    display: flex;
+    align-items: center;
+}
+.Header .search img {
+    width: 15px;
+}
+.Header .search input {
+    background-color: #efefef;
+    padding-left: 5px;
+}
+.Header .search input::placeholder {
+    color: #919191;
+}
+
+/* Feed */
+.Feed-on {
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    top: 60px;
+    margin: 30px;
+    width: 600px;
+    border: 1px solid #dbdbdb;
+}
+
+.Feed .feed-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.Feed .feed-head .feed-profile {
+    display: flex;
+    align-items: center;
+}
+.Feed .feed-head .img-usr {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #dbdbdb;
+    margin: 15px;
+}
+.Feed .feed-head p {
+    font-weight: bold;
+}
+.Feed .feed-head button {
+    background-color: white;
+    width: 24px;
+}
+.Feed .feed-head .btn-opt {
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
+}
+
+.Feed .feed-img img {
+    width: 100%;
+}
+
+.Feed .icon-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+.Feed .feed-icon {
+    width: 26px;
+    height: 26px;
+    margin: 5px;
+}
+
+.Feed .feed-content, .Feed .feed-comment {
+    padding-left: 10px;
+}
+.Feed .feed-content p {
+    margin-bottom: 10px;
+}
+
+.Feed .feed-comment li {
+    margin-bottom: 7px;
+}
+
+.Feed .inp-comment {
+    width: 100%;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #dbdbdb;
+}
+.Feed .inp-comment div {
+    display: flex;
+    align-items: center;
+}
+.Feed .inp-comment .inp-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+.Feed .inp-comment input {
+    margin-left: 5px;
+}
+.Feed .inp-comment input::placeholder {
+    font-size: 16px;
+}
+.Feed .inp-comment button {
+    background-color: white;
+    font-size: 16px;
+    color: #0095f6;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.Feed strong, .bold {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* input창 사라짐 */
+@media screen and (max-width:639px) {
+    .Header {
+        justify-content: space-between;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .Header .search {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width:479px) {
+    .Feed-on {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100vw;
+    }
+}
